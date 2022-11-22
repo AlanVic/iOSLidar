@@ -12,6 +12,17 @@ import RealityKit
 class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
     @IBOutlet weak var augmentedView: ARView!
     
+    lazy var circleView: UIView = {
+        let circleView = UIView(frame: CGRect(x:-10, y: -10, width: 10, height: 10))
+        circleView.layer.cornerRadius = circleView.frame.width / 2
+        circleView.backgroundColor = .red
+        return circleView
+    }()
+    
+    override func viewDidLoad() {
+        augmentedView.addSubview(circleView)
+    }
+    
     @IBAction func didTapView(_ sender: UITapGestureRecognizer) {
         print("did tap view", sender)
         let location = sender.location(in: augmentedView)
@@ -38,16 +49,7 @@ class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
     }
     
     func addACircleToView(onLocation location: CGPoint) {
-//        let circleLayer = CAShapeLayer()
-//        circleLayer.path = UIBezierPath(ovalIn: CGRect(x: location.x, y: location.y, width: 10, height: 10)).cgPath
-        
-        let cicleView = UIView(frame: CGRect(x: location.x, y: location.y, width: 10, height: 10))
-        cicleView.layer.cornerRadius = cicleView.frame.width / 2
-        cicleView.backgroundColor = .red
-        
-//        augmentedView.subviews.forEach {
-//            $0.removeFromSuperview()
-//        }
-        augmentedView.addSubview(cicleView)
+        circleView.layer.position = location
+        augmentedView.layoutSubviews()
     }
 }
