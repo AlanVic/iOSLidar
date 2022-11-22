@@ -97,6 +97,7 @@ class ViewController: UIViewController, ARSessionDelegate {
                 
                 let depthSize = CGSize(width: depthWidth, height: depthHeight)
                 
+                // Create CI image normalized grayscale
                 let ciImage = CIImage(cvPixelBuffer: depth)
                 let context = CIContext.init(options: nil)
                 guard let cgImageRef = context.createCGImage(ciImage, from:
@@ -115,6 +116,7 @@ class ViewController: UIViewController, ARSessionDelegate {
                 // Auxiliary function to make String from depth map array
                 func getStringFrom2DimArray(array: [[Float32]], height: Int, width: Int) -> String {
                     var arrayStr: String = ""
+                    //possivelmente o erro está aqui
                     for y in 1...height-1 {
                         var lineStr = "";
                         for x in 1...width-1 {

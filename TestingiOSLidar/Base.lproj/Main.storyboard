@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wy7-e5-TvK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wy7-e5-TvK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Capturar-->
+        <!--Salvar-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestingiOSLidar" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmB-M8-dG2">
-                                <rect key="frame" x="0.0" y="152.5" width="414" height="552"/>
+                                <rect key="frame" x="0.0" y="154.5" width="414" height="552"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cmB-M8-dG2" secondAttribute="height" multiplier="3:4" id="CWX-fk-QBi"/>
                                 </constraints>
                             </arView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWx-ti-qib">
-                                <rect key="frame" x="16" y="762.5" width="123" height="34.5"/>
+                                <rect key="frame" x="16" y="759" width="138" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="108" id="jdB-Ew-x6p"/>
                                 </constraints>
@@ -35,7 +36,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Frames salvos: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-62-Haj">
-                                <rect key="frame" x="143" y="722.5" width="128" height="24"/>
+                                <rect key="frame" x="143" y="719" width="128" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="7S3-xK-Brn"/>
                                 </constraints>
@@ -55,7 +56,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lWx-ti-qib" secondAttribute="bottom" constant="16" id="vhv-wr-J2p"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Capturar" id="8Ts-lF-ZbP"/>
+                    <tabBarItem key="tabBarItem" title="Salvar" selectedImage="plus.rectangle.on.folder" catalog="system" id="8Ts-lF-ZbP"/>
                     <connections>
                         <outlet property="augmentedView" destination="cmB-M8-dG2" id="EGU-uF-mfO"/>
                         <outlet property="saveFramesLabel" destination="5mY-62-Haj" id="WDB-Bn-v5h"/>
@@ -84,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="-200" y="204"/>
         </scene>
-        <!--Capturar-->
+        <!--Experiência-->
         <scene sceneID="MQD-Fw-fXB">
             <objects>
                 <viewController id="tlm-jL-dMH" customClass="ExperienceMeasureViewController" customModule="TestingiOSLidar" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,7 +94,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNo-EL-6aI">
-                                <rect key="frame" x="0.0" y="152.5" width="414" height="552"/>
+                                <rect key="frame" x="0.0" y="154.5" width="414" height="552"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dNo-EL-6aI" secondAttribute="height" multiplier="3:4" id="6rA-lI-P47"/>
@@ -102,17 +103,8 @@
                                     <outletCollection property="gestureRecognizers" destination="0rk-np-S0M" appends="YES" id="Y3c-Li-Ja1"/>
                                 </connections>
                             </arView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prd-P0-Na2">
-                                <rect key="frame" x="16" y="762.5" width="123" height="34.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="108" id="ZFO-R9-cSX"/>
-                                </constraints>
-                                <buttonConfiguration key="configuration" style="filled" title="Salvar Frame" cornerStyle="large">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
-                                </buttonConfiguration>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Frames salvos: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WH2-2e-86S">
-                                <rect key="frame" x="143" y="722.5" width="128" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WH2-2e-86S">
+                                <rect key="frame" x="207" y="765" width="0.0" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="N5h-dB-3Va"/>
                                 </constraints>
@@ -124,17 +116,17 @@
                         <viewLayoutGuide key="safeArea" id="9hF-fb-Kld"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="prd-P0-Na2" firstAttribute="leading" secondItem="9hF-fb-Kld" secondAttribute="leading" constant="16" id="0Dn-ee-Rif"/>
+                            <constraint firstItem="9hF-fb-Kld" firstAttribute="bottom" secondItem="WH2-2e-86S" secondAttribute="bottom" constant="24" id="2nF-Y9-gpU"/>
                             <constraint firstItem="dNo-EL-6aI" firstAttribute="centerY" secondItem="9hF-fb-Kld" secondAttribute="centerY" id="4oW-oS-Chb"/>
-                            <constraint firstItem="9hF-fb-Kld" firstAttribute="bottom" secondItem="prd-P0-Na2" secondAttribute="bottom" constant="16" id="IRq-3z-1M6"/>
+                            <constraint firstItem="WH2-2e-86S" firstAttribute="centerX" secondItem="9hF-fb-Kld" secondAttribute="centerX" id="Bxc-uD-scZ"/>
                             <constraint firstItem="dNo-EL-6aI" firstAttribute="centerX" secondItem="9hF-fb-Kld" secondAttribute="centerX" id="LMH-YD-Vxd"/>
-                            <constraint firstItem="prd-P0-Na2" firstAttribute="top" secondItem="WH2-2e-86S" secondAttribute="bottom" constant="16" id="dHu-Of-0Dq"/>
                             <constraint firstItem="dNo-EL-6aI" firstAttribute="width" secondItem="zcB-48-az7" secondAttribute="width" id="i19-wg-Dzm"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Capturar" id="gZM-4n-ABD"/>
+                    <tabBarItem key="tabBarItem" title="Experiência" selectedImage="sensor" catalog="system" id="gZM-4n-ABD"/>
                     <connections>
                         <outlet property="augmentedView" destination="dNo-EL-6aI" id="T1s-OV-QCm"/>
+                        <outlet property="resultLabel" destination="WH2-2e-86S" id="kJQ-tI-h6k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RY-mF-yXV" sceneMemberID="firstResponder"/>
@@ -148,6 +140,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus.rectangle.on.folder" catalog="system" width="128" height="95"/>
+        <image name="sensor" catalog="system" width="128" height="87"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
