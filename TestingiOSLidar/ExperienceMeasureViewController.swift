@@ -14,8 +14,9 @@ class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
     
     @IBOutlet weak var resultLabel: UILabel!
     
+    @IBOutlet weak var representationLidarImage: UIImageView!
     lazy var circleView: UIView = {
-        let circleView = UIView(frame: CGRect(x:-10, y: -10, width: 10, height: 10))
+        let circleView = UIView(frame: CGRect(x:0, y: 0, width: 10, height: 10))
         circleView.layer.cornerRadius = circleView.frame.width / 2
         circleView.backgroundColor = .red
         return circleView
@@ -28,6 +29,11 @@ class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         augmentedView.addSubview(circleView)
+        
+        augmentedView.session.delegate = self
+        
+        session = ARSession()
+        session.delegate = self
         
         self.timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { [weak self] _ in
             self?.getDataLidar()
@@ -97,9 +103,19 @@ class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
                     depthArray.append(distancesLine)
                 }
                 let locationCircle = circleView.layer.position
-                let distance = depthArray[Int(locationCircle.y)][Int(locationCircle.x)]
-                print("O ponto tem a distancia: ", distance)
-                resultLabel.text = "Distância medida: \(distance)"
+                let relationPosition = convertCGPointToLidarRelation(location: locationCircle)
+                let distance = depthArray[Int(relationPosition.x)][Int(relationPosition.y)]
+                resultLabel.text = "\(distance)m"
+                
+                let depthSize = CGSize(width: depthWidth, height: depthHeight)
+                let ciImage = CIImage(cvPixelBuffer: depth)
+                let context = CIContext.init(options: nil)
+                guard let cgImageRef = context.createCGImage(ciImage, from:
+                                                                CGRect(x: 0, y: 0, width: depthSize.width, height: depthSize.height)) else { return }
+                let uiImage = UIImage(cgImage: cgImageRef)
+                representationLidarImage.image = uiImage
+                representationLidarImage.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
+                
                 
             }
             
