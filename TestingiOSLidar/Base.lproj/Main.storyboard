@@ -63,23 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="18"/>
-        </scene>
-        <!--Lista-->
-        <scene sceneID="e95-cu-lAE">
-            <objects>
-                <viewController id="eey-WK-QbM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="smD-e1-JwO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="n84-p4-7cf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Lista" id="nOp-OA-Ywn"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M6S-ou-wAx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="842" y="778"/>
+            <point key="canvasLocation" x="996" y="-5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1s2-WO-0Pj">
@@ -93,12 +77,74 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="feX-lO-YOv"/>
-                        <segue destination="eey-WK-QbM" kind="relationship" relationship="viewControllers" id="IJr-7F-qRc"/>
+                        <segue destination="tlm-jL-dMH" kind="relationship" relationship="viewControllers" id="c3K-Lc-ORp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ztc-JH-TPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-200" y="204"/>
+        </scene>
+        <!--Capturar-->
+        <scene sceneID="MQD-Fw-fXB">
+            <objects>
+                <viewController id="tlm-jL-dMH" customClass="ExperienceMeasureViewController" customModule="TestingiOSLidar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zcB-48-az7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNo-EL-6aI">
+                                <rect key="frame" x="0.0" y="152.5" width="414" height="552"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dNo-EL-6aI" secondAttribute="height" multiplier="3:4" id="6rA-lI-P47"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0rk-np-S0M" appends="YES" id="Y3c-Li-Ja1"/>
+                                </connections>
+                            </arView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prd-P0-Na2">
+                                <rect key="frame" x="16" y="762.5" width="123" height="34.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="108" id="ZFO-R9-cSX"/>
+                                </constraints>
+                                <buttonConfiguration key="configuration" style="filled" title="Salvar Frame" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Frames salvos: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WH2-2e-86S">
+                                <rect key="frame" x="143" y="722.5" width="128" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="N5h-dB-3Va"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9hF-fb-Kld"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="prd-P0-Na2" firstAttribute="leading" secondItem="9hF-fb-Kld" secondAttribute="leading" constant="16" id="0Dn-ee-Rif"/>
+                            <constraint firstItem="dNo-EL-6aI" firstAttribute="centerY" secondItem="9hF-fb-Kld" secondAttribute="centerY" id="4oW-oS-Chb"/>
+                            <constraint firstItem="9hF-fb-Kld" firstAttribute="bottom" secondItem="prd-P0-Na2" secondAttribute="bottom" constant="16" id="IRq-3z-1M6"/>
+                            <constraint firstItem="dNo-EL-6aI" firstAttribute="centerX" secondItem="9hF-fb-Kld" secondAttribute="centerX" id="LMH-YD-Vxd"/>
+                            <constraint firstItem="prd-P0-Na2" firstAttribute="top" secondItem="WH2-2e-86S" secondAttribute="bottom" constant="16" id="dHu-Of-0Dq"/>
+                            <constraint firstItem="dNo-EL-6aI" firstAttribute="width" secondItem="zcB-48-az7" secondAttribute="width" id="i19-wg-Dzm"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Capturar" id="gZM-4n-ABD"/>
+                    <connections>
+                        <outlet property="augmentedView" destination="dNo-EL-6aI" id="T1s-OV-QCm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3RY-mF-yXV" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0rk-np-S0M">
+                    <connections>
+                        <action selector="didTapView:" destination="tlm-jL-dMH" id="PHa-xO-YDN"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1023" y="798"/>
         </scene>
     </scenes>
     <resources>
