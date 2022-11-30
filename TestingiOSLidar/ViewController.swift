@@ -117,9 +117,9 @@ class ViewController: UIViewController, ARSessionDelegate {
                 func getStringFrom2DimArray(array: [[Float32]], height: Int, width: Int) -> String {
                     var arrayStr: String = ""
                     //possivelmente o erro está aqui
-                    for y in 1...height-1 {
+                    for y in 0...height-1 {
                         var lineStr = "";
-                        for x in 1...width-1 {
+                        for x in 0...width-1 {
                             lineStr += String(array[y][x])
                             if x != width-1 {
                                 lineStr += ","
