@@ -13,9 +13,9 @@ class ViewController: UIViewController, ARSessionDelegate {
 
     var session: ARSession!
     
-    var frames: [ARFrame] = [] {
+    var framesCount: Int = 0 {
         didSet {
-            obsevableFrameLabel(frames.count)
+            obsevableFrameLabel(framesCount)
         }
     }
     
@@ -60,7 +60,7 @@ class ViewController: UIViewController, ARSessionDelegate {
     @IBAction func didTapSaveFrame(_ sender: Any) {
         if let currentFrame = session.currentFrame {
             let frameImage = currentFrame.capturedImage
-            frames.append(currentFrame)
+            framesCount += 1
             let depthData = currentFrame.sceneDepth?.depthMap
 
             // Process obtained data
@@ -75,7 +75,7 @@ class ViewController: UIViewController, ARSessionDelegate {
             let uiImage = UIImage(cgImage: cgImageRef)
             
             // Save image
-            try! saveImage(uiImage, folder: getTempFolder(), frameCount: frames.count, extensionPathComponents: nil)
+            try! saveImage(uiImage, folder: getTempFolder(), frameCount: framesCount, extensionPathComponents: nil)
             
             // Prepare normalized grayscale image with DepthMap
             if let depth = depthData {
@@ -105,11 +105,11 @@ class ViewController: UIViewController, ARSessionDelegate {
                 let uiImage = UIImage(cgImage: cgImageRef)
                 
                 // Save image (the same for depth)
-                try! saveImage(uiImage, folder: getTempFolder(), frameCount: frames.count, extensionPathComponents: "ImageDepth")
+                try! saveImage(uiImage, folder: getTempFolder(), frameCount: framesCount, extensionPathComponents: "ImageDepth")
                 
                 
                 // Save depth map as txt with float numbers
-                let depthTxtPath = try! getTempFolder().appendingPathComponent("\(frames.count)_depth.txt")
+                let depthTxtPath = try! getTempFolder().appendingPathComponent("\(framesCount)_depth.txt")
                 let depthString:String = getStringFrom2DimArray(array: depthArray, height: depthHeight, width: depthWidth)
                 try! depthString.write(to: depthTxtPath, atomically: false, encoding: .utf8)
                 
@@ -158,7 +158,7 @@ class ViewController: UIViewController, ARSessionDelegate {
         do {
             let filePaths = try fileManager.contentsOfDirectory(atPath: tempFolderPath)
             for filePath in filePaths {
-                try fileManager.removeItem(atPath: tempFolderPath + filePath)
+                try fileManager.removeItem(atPath: tempFolderPath + "/" + filePath)
             }
         } catch {
             print("Could not clear temp folder: \(error)")
