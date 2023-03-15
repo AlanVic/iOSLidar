@@ -8,6 +8,7 @@
 //import UIKit
 import ARKit
 import RealityKit
+import Zip
 
 class ViewController: UIViewController, ARSessionDelegate {
 
@@ -136,6 +137,40 @@ class ViewController: UIViewController, ARSessionDelegate {
         }
     }
     
+    @IBAction func exportPack(_ sender: Any) {
+        do {
+            let zipFilePath = try Zip.quickZipFiles(getAllFilePathsToExport(), fileName: "file")
+            print(zipFilePath)
+            var fileToShare = [Any]()
+            fileToShare.append(zipFilePath)
+            let activityViewController = UIActivityViewController(activityItems: fileToShare, applicationActivities: nil)
+            self.present(activityViewController, animated: true)
+        } catch {
+            print("Something went wrong")
+        }
+    }
+
+    func getAllFilePathsToExport() -> [URL] {
+        var filePaths: [URL] = []
+        do {
+            let path = try getTempFolder()
+            print(path)
+
+            if let enumerator = FileManager.default.enumerator(at: path, includingPropertiesForKeys: nil) {
+                for case let fileURL as URL in enumerator {
+                    let fileAttributes = try fileURL.resourceValues(forKeys:[.isRegularFileKey])
+                    if fileAttributes.isRegularFile! {
+                        filePaths.append(fileURL)
+                    }
+                }
+            }
+        } catch {
+            print(error)
+            return filePaths
+        }
+        return filePaths
+    }
+
     func getTempFolder() throws -> URL {
         let path = try FileManager.default.url(for: .documentDirectory,
                                                in: .userDomainMask,

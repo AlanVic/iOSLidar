@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45F392C2689CA1C9780CDCDC /* Pods_TestingiOSLidar_TestingiOSLidarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEED1F069CB259E1937376EB /* Pods_TestingiOSLidar_TestingiOSLidarUITests.framework */; };
+		B819E0393F7DE0B03648EF60 /* Pods_TestingiOSLidarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71EB7024E13419B31685E625 /* Pods_TestingiOSLidarTests.framework */; };
+		B9FDE42124D5B3A586107B15 /* Pods_TestingiOSLidar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A32D137FE96BBD371D2426 /* Pods_TestingiOSLidar.framework */; };
 		DBC8039C292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8039B292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift */; };
 		DBCCDA3528D4F05300C1C80E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCDA3428D4F05300C1C80E /* AppDelegate.swift */; };
 		DBCCDA3728D4F05300C1C80E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCDA3628D4F05300C1C80E /* SceneDelegate.swift */; };
@@ -37,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0309E2CD3858C5E4D4839BBB /* Pods-TestingiOSLidar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingiOSLidar.debug.xcconfig"; path = "Target Support Files/Pods-TestingiOSLidar/Pods-TestingiOSLidar.debug.xcconfig"; sourceTree = "<group>"; };
+		1BC55C51946595C98C2029BC /* Pods-TestingiOSLidar-TestingiOSLidarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingiOSLidar-TestingiOSLidarUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestingiOSLidar-TestingiOSLidarUITests/Pods-TestingiOSLidar-TestingiOSLidarUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BD6C34C2EA9251DB3861D2A /* Pods-TestingiOSLidar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingiOSLidar.release.xcconfig"; path = "Target Support Files/Pods-TestingiOSLidar/Pods-TestingiOSLidar.release.xcconfig"; sourceTree = "<group>"; };
+		6DD09D463CCADDF83A70299F /* Pods-TestingiOSLidarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingiOSLidarTests.release.xcconfig"; path = "Target Support Files/Pods-TestingiOSLidarTests/Pods-TestingiOSLidarTests.release.xcconfig"; sourceTree = "<group>"; };
+		71EB7024E13419B31685E625 /* Pods_TestingiOSLidarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingiOSLidarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A71BA9E4CA39E97067E99D7E /* Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig"; path = "Target Support Files/Pods-TestingiOSLidar-TestingiOSLidarUITests/Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B9A32D137FE96BBD371D2426 /* Pods_TestingiOSLidar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingiOSLidar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC8039B292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceMeasureViewController.swift; sourceTree = "<group>"; };
 		DBCCDA3128D4F05300C1C80E /* TestingiOSLidar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingiOSLidar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCCDA3428D4F05300C1C80E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +61,8 @@
 		DBCCDA5128D4F05500C1C80E /* TestingiOSLidarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingiOSLidarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCCDA5528D4F05500C1C80E /* TestingiOSLidarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingiOSLidarUITests.swift; sourceTree = "<group>"; };
 		DBCCDA5728D4F05500C1C80E /* TestingiOSLidarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingiOSLidarUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E9FC72E53A3EF6076AAF0B6F /* Pods-TestingiOSLidarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingiOSLidarTests.debug.xcconfig"; path = "Target Support Files/Pods-TestingiOSLidarTests/Pods-TestingiOSLidarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FEED1F069CB259E1937376EB /* Pods_TestingiOSLidar_TestingiOSLidarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingiOSLidar_TestingiOSLidarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9FDE42124D5B3A586107B15 /* Pods_TestingiOSLidar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B819E0393F7DE0B03648EF60 /* Pods_TestingiOSLidarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F392C2689CA1C9780CDCDC /* Pods_TestingiOSLidar_TestingiOSLidarUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6218BFC7176FB1268A91802A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0309E2CD3858C5E4D4839BBB /* Pods-TestingiOSLidar.debug.xcconfig */,
+				5BD6C34C2EA9251DB3861D2A /* Pods-TestingiOSLidar.release.xcconfig */,
+				1BC55C51946595C98C2029BC /* Pods-TestingiOSLidar-TestingiOSLidarUITests.debug.xcconfig */,
+				A71BA9E4CA39E97067E99D7E /* Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig */,
+				E9FC72E53A3EF6076AAF0B6F /* Pods-TestingiOSLidarTests.debug.xcconfig */,
+				6DD09D463CCADDF83A70299F /* Pods-TestingiOSLidarTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6816C7C45E0B3315F1CD9AAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9A32D137FE96BBD371D2426 /* Pods_TestingiOSLidar.framework */,
+				FEED1F069CB259E1937376EB /* Pods_TestingiOSLidar_TestingiOSLidarUITests.framework */,
+				71EB7024E13419B31685E625 /* Pods_TestingiOSLidarTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DBCCDA2828D4F05300C1C80E = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +124,8 @@
 				DBCCDA4A28D4F05500C1C80E /* TestingiOSLidarTests */,
 				DBCCDA5428D4F05500C1C80E /* TestingiOSLidarUITests */,
 				DBCCDA3228D4F05300C1C80E /* Products */,
+				6218BFC7176FB1268A91802A /* Pods */,
+				6816C7C45E0B3315F1CD9AAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBCCDA5B28D4F05500C1C80E /* Build configuration list for PBXNativeTarget "TestingiOSLidar" */;
 			buildPhases = (
+				75514C6F63D9262ABF4D4D53 /* [CP] Check Pods Manifest.lock */,
 				DBCCDA2D28D4F05300C1C80E /* Sources */,
 				DBCCDA2E28D4F05300C1C80E /* Frameworks */,
 				DBCCDA2F28D4F05300C1C80E /* Resources */,
+				6B22E8A160DD4ADB70E48847 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +197,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBCCDA5E28D4F05500C1C80E /* Build configuration list for PBXNativeTarget "TestingiOSLidarTests" */;
 			buildPhases = (
+				6AA2045B73BC23664719EA4F /* [CP] Check Pods Manifest.lock */,
 				DBCCDA4328D4F05500C1C80E /* Sources */,
 				DBCCDA4428D4F05500C1C80E /* Frameworks */,
 				DBCCDA4528D4F05500C1C80E /* Resources */,
@@ -172,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBCCDA6128D4F05500C1C80E /* Build configuration list for PBXNativeTarget "TestingiOSLidarUITests" */;
 			buildPhases = (
+				D0E43AF30251A2E757D5992D /* [CP] Check Pods Manifest.lock */,
 				DBCCDA4D28D4F05500C1C80E /* Sources */,
 				DBCCDA4E28D4F05500C1C80E /* Frameworks */,
 				DBCCDA4F28D4F05500C1C80E /* Resources */,
+				94CEE03FE10409FCE9F5014E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +301,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AA2045B73BC23664719EA4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestingiOSLidarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B22E8A160DD4ADB70E48847 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestingiOSLidar/Pods-TestingiOSLidar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestingiOSLidar/Pods-TestingiOSLidar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestingiOSLidar/Pods-TestingiOSLidar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		75514C6F63D9262ABF4D4D53 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestingiOSLidar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94CEE03FE10409FCE9F5014E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestingiOSLidar-TestingiOSLidarUITests/Pods-TestingiOSLidar-TestingiOSLidarUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestingiOSLidar-TestingiOSLidarUITests/Pods-TestingiOSLidar-TestingiOSLidarUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestingiOSLidar-TestingiOSLidarUITests/Pods-TestingiOSLidar-TestingiOSLidarUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0E43AF30251A2E757D5992D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestingiOSLidar-TestingiOSLidarUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DBCCDA2D28D4F05300C1C80E /* Sources */ = {
@@ -436,6 +585,7 @@
 		};
 		DBCCDA5C28D4F05500C1C80E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0309E2CD3858C5E4D4839BBB /* Pods-TestingiOSLidar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -464,6 +614,7 @@
 		};
 		DBCCDA5D28D4F05500C1C80E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BD6C34C2EA9251DB3861D2A /* Pods-TestingiOSLidar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -492,6 +643,7 @@
 		};
 		DBCCDA5F28D4F05500C1C80E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9FC72E53A3EF6076AAF0B6F /* Pods-TestingiOSLidarTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +664,7 @@
 		};
 		DBCCDA6028D4F05500C1C80E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DD09D463CCADDF83A70299F /* Pods-TestingiOSLidarTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +685,7 @@
 		};
 		DBCCDA6228D4F05500C1C80E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BC55C51946595C98C2029BC /* Pods-TestingiOSLidar-TestingiOSLidarUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +704,7 @@
 		};
 		DBCCDA6328D4F05500C1C80E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A71BA9E4CA39E97067E99D7E /* Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

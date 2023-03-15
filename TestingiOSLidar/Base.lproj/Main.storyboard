@@ -44,12 +44,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYl-fG-GM7">
+                                <rect key="frame" x="252" y="759" width="146" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Exportar pack">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="exportPack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bFu-AI-euh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lWx-ti-qib" firstAttribute="top" secondItem="5mY-62-Haj" secondAttribute="bottom" constant="16" id="Btc-y8-oid"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CJg-nd-qFr"/>
+                            <constraint firstItem="EYl-fG-GM7" firstAttribute="top" secondItem="lWx-ti-qib" secondAttribute="top" id="DTC-2k-jkr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EYl-fG-GM7" secondAttribute="trailing" constant="16" id="RfQ-nT-Bm9"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Scv-ui-EbX"/>
                             <constraint firstItem="lWx-ti-qib" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dbK-ML-aIq"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vBn-9K-xyi"/>
