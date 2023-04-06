@@ -9,6 +9,7 @@
 import ARKit
 import RealityKit
 import Zip
+import CoreMotion
 
 class ViewController: UIViewController, ARSessionDelegate {
 
@@ -20,8 +21,13 @@ class ViewController: UIViewController, ARSessionDelegate {
         }
     }
     
+    @IBOutlet weak var xDegreeMeasured: UILabel!
+    @IBOutlet weak var yDegreeMeasured: UILabel!
+    @IBOutlet weak var zDegreeMeasured: UILabel!
     @IBOutlet weak var augmentedView: ARView!
     @IBOutlet weak var saveFramesLabel: UILabel!
+
+    let motionManager = CMMotionManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +38,42 @@ class ViewController: UIViewController, ARSessionDelegate {
         
         session = ARSession()
         session.delegate = self
+
+        motionManager.startGyroUpdates()
+        motionManager.startDeviceMotionUpdates(using: .xArbitraryCorrectedZVertical)
+
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
+
+            if let data = self.motionManager.deviceMotion {
+
+                let pitch = data.attitude.pitch
+                let roll = data.attitude.roll
+                let yaw = data.attitude.yaw
+
+
+                var xDegree = acos(data.gravity.x/1) * 180 / .pi
+                var yDegree = acos(data.gravity.y/1) * 180 / .pi
+                var zDegree = acos(data.gravity.z/1) * 180 / .pi
+                print("--------------------------")
+                print("x:" + "\(data.gravity.x)")
+                print("y:" + "\(data.gravity.y)")
+                print("z:" + "\(data.gravity.z)")
+                if (data.gravity.y > 0) {
+                    xDegree = 180 + (180 - xDegree)
+                }
+                if (data.gravity.z > 0) {
+                    yDegree = 180 + (180 - yDegree)
+                }
+                if (data.gravity.x > 0) {
+                    zDegree = 180 + (180 - zDegree)
+                }
+
+                self.xDegreeMeasured.text = "x: " + "\(xDegree)º"
+                self.yDegreeMeasured.text = "y: " + "\(yDegree)º"
+                self.zDegreeMeasured.text = "z: " + "\(zDegree)º"
+
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
