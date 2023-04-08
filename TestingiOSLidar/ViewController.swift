@@ -11,6 +11,16 @@ import RealityKit
 import Zip
 import CoreMotion
 
+struct AnglesMeasured {
+    let xDegree: Double
+    let yDegree: Double
+    let zDegree: Double
+
+    func toArray() -> Array<Double> {
+        return [xDegree,yDegree,zDegree]
+    }
+}
+
 class ViewController: UIViewController, ARSessionDelegate {
 
     var session: ARSession!
@@ -45,35 +55,36 @@ class ViewController: UIViewController, ARSessionDelegate {
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
 
             if let data = self.motionManager.deviceMotion {
+                let measuredAngle = self.measureAngles(fromDataAcceleration: data.gravity)
 
-                let pitch = data.attitude.pitch
-                let roll = data.attitude.roll
-                let yaw = data.attitude.yaw
-
-
-                var xDegree = acos(data.gravity.x/1) * 180 / .pi
-                var yDegree = acos(data.gravity.y/1) * 180 / .pi
-                var zDegree = acos(data.gravity.z/1) * 180 / .pi
-                print("--------------------------")
-                print("x:" + "\(data.gravity.x)")
-                print("y:" + "\(data.gravity.y)")
-                print("z:" + "\(data.gravity.z)")
-                if (data.gravity.y > 0) {
-                    xDegree = 180 + (180 - xDegree)
-                }
-                if (data.gravity.z > 0) {
-                    yDegree = 180 + (180 - yDegree)
-                }
-                if (data.gravity.x > 0) {
-                    zDegree = 180 + (180 - zDegree)
-                }
-
-                self.xDegreeMeasured.text = "x: " + "\(xDegree)º"
-                self.yDegreeMeasured.text = "y: " + "\(yDegree)º"
-                self.zDegreeMeasured.text = "z: " + "\(zDegree)º"
+                self.xDegreeMeasured.text = "x: " + "\(measuredAngle.xDegree)º"
+                self.yDegreeMeasured.text = "y: " + "\(measuredAngle.yDegree)º"
+                self.zDegreeMeasured.text = "z: " + "\(measuredAngle.zDegree)º"
 
             }
         }
+    }
+
+    private func measureAngles(fromDataAcceleration acceleration: CMAcceleration) -> AnglesMeasured {
+        var xDegree = acos(acceleration.x/1) * 180 / .pi
+        var yDegree = acos(acceleration.y/1) * 180 / .pi
+        var zDegree = acos(acceleration.z/1) * 180 / .pi
+
+//        print("--------------------------")
+//        print("x:" + "\(acceleration.x)")
+//        print("y:" + "\(acceleration.y)")
+//        print("z:" + "\(acceleration.z)")
+        if (acceleration.y > 0) {
+            xDegree = 180 + (180 - xDegree)
+        }
+        if (acceleration.z > 0) {
+            yDegree = 180 + (180 - yDegree)
+        }
+        if (acceleration.x > 0) {
+            zDegree = 180 + (180 - zDegree)
+        }
+
+        return AnglesMeasured(xDegree: xDegree, yDegree: yDegree, zDegree: zDegree)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +112,7 @@ class ViewController: UIViewController, ARSessionDelegate {
     }
     
     @IBAction func didTapSaveFrame(_ sender: Any) {
+        var jsonDict: Dictionary<String, Any> = Dictionary()
         if let currentFrame = session.currentFrame {
             let frameImage = currentFrame.capturedImage
             framesCount += 1
@@ -119,6 +131,12 @@ class ViewController: UIViewController, ARSessionDelegate {
             
             // Save image
             try! saveImage(uiImage, folder: getTempFolder(), frameCount: framesCount, extensionPathComponents: nil)
+
+            //Measure relative angle from three axis
+            if let data = self.motionManager.deviceMotion {
+                let measuredAngles = measureAngles(fromDataAcceleration:data.gravity)
+                jsonDict["RelativeAngles"] = measuredAngles.toArray()
+            }
             
             // Prepare normalized grayscale image with DepthMap
             if let depth = depthData {
@@ -155,6 +173,9 @@ class ViewController: UIViewController, ARSessionDelegate {
                 let depthTxtPath = try! getTempFolder().appendingPathComponent("\(framesCount)_depth.txt")
                 let depthString:String = getStringFrom2DimArray(array: depthArray, height: depthHeight, width: depthWidth)
                 try! depthString.write(to: depthTxtPath, atomically: false, encoding: .utf8)
+
+                //Add LIDAR data to Json
+                jsonDict["LIDARData"] = depthArray
                 
                 // Auxiliary function to make String from depth map array
                 func getStringFrom2DimArray(array: [[Float32]], height: Int, width: Int) -> String {
@@ -176,6 +197,11 @@ class ViewController: UIViewController, ARSessionDelegate {
             }
         } else {
             print ("Não conseguiu o frame")
+        }
+        if let json = try? JSONSerialization.data(withJSONObject: jsonDict, options: []) {
+            if let jsonString = String(data: json, encoding: .utf8) {
+                print(jsonString)
+            }
         }
     }
     
