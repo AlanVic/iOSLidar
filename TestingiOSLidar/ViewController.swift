@@ -50,7 +50,7 @@ class ViewController: UIViewController, ARSessionDelegate {
         session.delegate = self
 
         motionManager.startGyroUpdates()
-        motionManager.startDeviceMotionUpdates(using: .xArbitraryCorrectedZVertical)
+        motionManager.startDeviceMotionUpdates()
 
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
 
@@ -136,6 +136,8 @@ class ViewController: UIViewController, ARSessionDelegate {
             if let data = self.motionManager.deviceMotion {
                 let measuredAngles = measureAngles(fromDataAcceleration:data.gravity)
                 jsonDict["RelativeAngles"] = measuredAngles.toArray()
+                //MARK: Remove the line below after testing on Lidar iPhone
+                jsonDict["LIDARData"] = fakeDepthArray()
             }
             
             // Prepare normalized grayscale image with DepthMap
@@ -198,7 +200,10 @@ class ViewController: UIViewController, ARSessionDelegate {
         } else {
             print ("Não conseguiu o frame")
         }
-        if let json = try? JSONSerialization.data(withJSONObject: jsonDict, options: []) {
+        if let json = try? JSONSerialization.data(withJSONObject: jsonDict, options: [.prettyPrinted]) {
+            let jsonPath = try! getTempFolder().appendingPathComponent("\(framesCount).json")
+            try! json.write(to: jsonPath)
+
             if let jsonString = String(data: json, encoding: .utf8) {
                 print(jsonString)
             }
@@ -276,5 +281,17 @@ class ViewController: UIViewController, ARSessionDelegate {
             imagePath = folder.appendingPathComponent("\(frameCount).jpg")
         }
         try image.jpegData(compressionQuality: 1.0)?.write(to: imagePath)
+    }
+
+    func fakeDepthArray() ->  [[Float32]] {
+        return [[randomFloat(),randomFloat(),randomFloat(),randomFloat()],
+                [randomFloat(),randomFloat(),randomFloat(),randomFloat()],
+                [randomFloat(),randomFloat(),randomFloat(),randomFloat()],
+                [randomFloat(),randomFloat(),randomFloat(),randomFloat()],
+                [randomFloat(),randomFloat(),randomFloat(),randomFloat()]]
+    }
+
+    func randomFloat() -> Float32 {
+        Float32([1.223,3.222,6.234,6.6254,3.567].randomElement() ?? 8.345)
     }
 }
