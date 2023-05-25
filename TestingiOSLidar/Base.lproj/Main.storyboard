@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wy7-e5-TvK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wy7-e5-TvK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,7 +93,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lWx-ti-qib" secondAttribute="bottom" constant="16" id="vhv-wr-J2p"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Salvar" selectedImage="plus.rectangle.on.folder" catalog="system" id="8Ts-lF-ZbP"/>
+                    <tabBarItem key="tabBarItem" title="Salvar" image="plus.rectangle.on.folder" catalog="system" selectedImage="plus.rectangle.on.folder" id="8Ts-lF-ZbP"/>
                     <connections>
                         <outlet property="augmentedView" destination="cmB-M8-dG2" id="EGU-uF-mfO"/>
                         <outlet property="saveFramesLabel" destination="5mY-62-Haj" id="WDB-Bn-v5h"/>
@@ -114,9 +115,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="selectionIndicatorTintColor" name="AccentColor"/>
+                        </tabBarAppearance>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="feX-lO-YOv"/>
+                        <segue destination="tlm-jL-dMH" kind="relationship" relationship="viewControllers" id="WSq-fm-xU8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ztc-JH-TPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -147,7 +152,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IZK-kx-SuM">
                                 <rect key="frame" x="145" y="639.5" width="269" height="146"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distância Medida" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05z-9M-GBm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distância calculada LIDAR:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05z-9M-GBm">
                                         <rect key="frame" x="0.0" y="0.0" width="269" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
@@ -159,7 +164,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ângulo relativo ao eixo z:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-Fa-4yO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ângulo relativo ao eixo Z:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-Fa-4yO">
                                         <rect key="frame" x="0.0" y="73" width="269" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
@@ -189,7 +194,7 @@
                             <constraint firstItem="dNo-EL-6aI" firstAttribute="width" secondItem="zcB-48-az7" secondAttribute="width" id="i19-wg-Dzm"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Experiência" selectedImage="sensor" catalog="system" id="gZM-4n-ABD"/>
+                    <tabBarItem key="tabBarItem" title="Experiência" image="sensor" catalog="system" selectedImage="sensor" id="gZM-4n-ABD"/>
                     <connections>
                         <outlet property="augmentedView" destination="dNo-EL-6aI" id="T1s-OV-QCm"/>
                         <outlet property="distanceResult" destination="WH2-2e-86S" id="kJQ-tI-h6k"/>
@@ -210,6 +215,9 @@
     <resources>
         <image name="plus.rectangle.on.folder" catalog="system" width="128" height="95"/>
         <image name="sensor" catalog="system" width="128" height="87"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
