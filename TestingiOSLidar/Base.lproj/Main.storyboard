@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wy7-e5-TvK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wy7-e5-TvK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -145,7 +145,7 @@
                                 <rect key="frame" x="0.0" y="616" width="145" height="193"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IZK-kx-SuM">
-                                <rect key="frame" x="145" y="687.5" width="269" height="50"/>
+                                <rect key="frame" x="145" y="639.5" width="269" height="146"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distância Medida" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05z-9M-GBm">
                                         <rect key="frame" x="0.0" y="0.0" width="269" height="23"/>
@@ -154,15 +154,24 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WH2-2e-86S">
-                                        <rect key="frame" x="0.0" y="23" width="269" height="27"/>
+                                        <rect key="frame" x="0.0" y="23" width="269" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ângulo relativo ao eixo z:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-Fa-4yO">
+                                        <rect key="frame" x="0.0" y="73" width="269" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hij-Ch-JPZ">
+                                        <rect key="frame" x="0.0" y="96" width="269" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="561-qn-qbe"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9hF-fb-Kld"/>
@@ -183,8 +192,9 @@
                     <tabBarItem key="tabBarItem" title="Experiência" selectedImage="sensor" catalog="system" id="gZM-4n-ABD"/>
                     <connections>
                         <outlet property="augmentedView" destination="dNo-EL-6aI" id="T1s-OV-QCm"/>
+                        <outlet property="distanceResult" destination="WH2-2e-86S" id="kJQ-tI-h6k"/>
+                        <outlet property="relativeAngleResult" destination="Hij-Ch-JPZ" id="FDX-Nt-ubx"/>
                         <outlet property="representationLidarImage" destination="TgT-Na-E2D" id="Wz0-bq-Eux"/>
-                        <outlet property="resultLabel" destination="WH2-2e-86S" id="kJQ-tI-h6k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RY-mF-yXV" sceneMemberID="firstResponder"/>
