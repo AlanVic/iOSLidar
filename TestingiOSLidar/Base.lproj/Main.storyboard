@@ -93,7 +93,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lWx-ti-qib" secondAttribute="bottom" constant="16" id="vhv-wr-J2p"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Salvar" image="plus.rectangle.on.folder" selectedImage="plus.rectangle.on.folder" catalog="system" id="8Ts-lF-ZbP"/>
+                    <tabBarItem key="tabBarItem" title="Salvar" image="plus.rectangle.on.folder" catalog="system" selectedImage="plus.rectangle.on.folder" id="8Ts-lF-ZbP"/>
                     <connections>
                         <outlet property="augmentedView" destination="cmB-M8-dG2" id="EGU-uF-mfO"/>
                         <outlet property="saveFramesLabel" destination="5mY-62-Haj" id="WDB-Bn-v5h"/>
@@ -150,24 +150,33 @@
                                 <rect key="frame" x="0.0" y="616" width="145" height="193"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IZK-kx-SuM">
-                                <rect key="frame" x="145" y="687.5" width="269" height="50"/>
+                                <rect key="frame" x="145" y="639.5" width="269" height="146"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distância Medida" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05z-9M-GBm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distância calculada LIDAR:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05z-9M-GBm">
                                         <rect key="frame" x="0.0" y="0.0" width="269" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WH2-2e-86S">
-                                        <rect key="frame" x="0.0" y="23" width="269" height="27"/>
+                                        <rect key="frame" x="0.0" y="23" width="269" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ângulo relativo ao eixo Z:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-Fa-4yO">
+                                        <rect key="frame" x="0.0" y="73" width="269" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hij-Ch-JPZ">
+                                        <rect key="frame" x="0.0" y="96" width="269" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="561-qn-qbe"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9hF-fb-Kld"/>
@@ -188,8 +197,9 @@
                     <tabBarItem key="tabBarItem" title="Experiência" image="sensor" catalog="system" selectedImage="sensor" id="gZM-4n-ABD"/>
                     <connections>
                         <outlet property="augmentedView" destination="dNo-EL-6aI" id="T1s-OV-QCm"/>
+                        <outlet property="distanceResult" destination="WH2-2e-86S" id="kJQ-tI-h6k"/>
+                        <outlet property="relativeAngleResult" destination="Hij-Ch-JPZ" id="FDX-Nt-ubx"/>
                         <outlet property="representationLidarImage" destination="TgT-Na-E2D" id="Wz0-bq-Eux"/>
-                        <outlet property="resultLabel" destination="WH2-2e-86S" id="kJQ-tI-h6k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RY-mF-yXV" sceneMemberID="firstResponder"/>
@@ -204,7 +214,6 @@
     </scenes>
     <resources>
         <image name="plus.rectangle.on.folder" catalog="system" width="128" height="95"/>
-        <image name="plus.rectangle.on.folder" width="128" height="128"/>
         <image name="sensor" catalog="system" width="128" height="87"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

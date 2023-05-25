@@ -11,10 +11,13 @@ import RealityKit
 
 class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
     @IBOutlet weak var augmentedView: ARView!
-    
-    @IBOutlet weak var resultLabel: UILabel!
-    
+    @IBOutlet weak var relativeAngleResult: UILabel!
+    @IBOutlet weak var distanceResult: UILabel!
     @IBOutlet weak var representationLidarImage: UIImageView!
+    
+    private let axisWidthAngle: CGFloat = 81.273
+    private let axisHeightAngle: CGFloat = 57.874
+    
     lazy var circleView: UIView = {
         let circleView = UIView(frame: CGRect(x:0, y: 0, width: 10, height: 10))
         circleView.layer.cornerRadius = circleView.frame.width / 2
@@ -102,10 +105,19 @@ class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
                     }
                     depthArray.append(distancesLine)
                 }
+                
+                //Distancia do ponto marcado
                 let locationCircle = circleView.layer.position
                 let relationPosition = convertCGPointToLidarRelation(location: locationCircle)
                 let distance = depthArray[Int(relationPosition.x)][Int(relationPosition.y)]
-                resultLabel.text = "\(distance)m"
+                distanceResult.text = "\(distance)m"
+                
+                //Angulo relativo
+                let angleCenterPoint = CGPoint(x: axisWidthAngle/2, y: axisHeightAngle/2)
+                let angleRelationPoint = CGPoint(x: (axisWidthAngle * relationPosition.x) / CGFloat(depthWidth),
+                                                    y: (axisHeightAngle * relationPosition.y) / CGFloat(depthHeight))
+                let distanceAngle = sqrt(pow(angleCenterPoint.x - angleRelationPoint.x,2) + pow(angleCenterPoint.y - angleRelationPoint.y,2))
+                relativeAngleResult.text = "\(distanceAngle)º"
                 
                 let depthSize = CGSize(width: depthWidth, height: depthHeight)
                 let ciImage = CIImage(cvPixelBuffer: depth)
