@@ -1,37 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wy7-e5-TvK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="piA-EB-KLW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Features View Controller-->
+        <scene sceneID="HsN-cT-WJ1">
+            <objects>
+                <hostingController id="Wpq-RJ-vMK" customClass="FeaturesViewController" customModule="TestingiOSLidar" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="y3m-B9-eha"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jOV-O1-az2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="865.21739130434787" y="310.71428571428572"/>
+        </scene>
         <!--Salvar-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestingiOSLidar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SaveFrameViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="TestingiOSLidar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmB-M8-dG2">
-                                <rect key="frame" x="0.0" y="154.5" width="414" height="552"/>
+                                <rect key="frame" x="0.0" y="179" width="414" height="552"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cmB-M8-dG2" secondAttribute="height" multiplier="3:4" id="CWX-fk-QBi"/>
                                 </constraints>
                             </arView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="z:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh6-qD-7Yg">
-                                <rect key="frame" x="16" y="669.5" width="14" height="21"/>
+                                <rect key="frame" x="16" y="694" width="14" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWx-ti-qib">
-                                <rect key="frame" x="16" y="759" width="138" height="38"/>
+                                <rect key="frame" x="16" y="808" width="138" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="108" id="jdB-Ew-x6p"/>
                                 </constraints>
@@ -43,7 +52,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Frames salvos: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-62-Haj">
-                                <rect key="frame" x="143" y="719" width="128" height="24"/>
+                                <rect key="frame" x="143" y="768" width="128" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="7S3-xK-Brn"/>
                                 </constraints>
@@ -52,7 +61,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYl-fG-GM7">
-                                <rect key="frame" x="252" y="759" width="146" height="38"/>
+                                <rect key="frame" x="252" y="808" width="146" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Exportar pack">
                                     <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
@@ -62,13 +71,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bl9-Gd-FZ4">
-                                <rect key="frame" x="16" y="640.5" width="14" height="21"/>
+                                <rect key="frame" x="16" y="665" width="14" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-55-KTg">
-                                <rect key="frame" x="16" y="611.5" width="14" height="21"/>
+                                <rect key="frame" x="16" y="636" width="14" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -104,34 +113,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="-5"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="1s2-WO-0Pj">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Wy7-e5-TvK" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vZU-Bu-Tan">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <tabBarAppearance key="standardAppearance">
-                            <color key="selectionIndicatorTintColor" name="AccentColor"/>
-                        </tabBarAppearance>
-                    </tabBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="feX-lO-YOv"/>
-                        <segue destination="tlm-jL-dMH" kind="relationship" relationship="viewControllers" id="WSq-fm-xU8"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ztc-JH-TPh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-200" y="204"/>
+            <point key="canvasLocation" x="1699" y="311"/>
         </scene>
         <!--Experiência-->
         <scene sceneID="MQD-Fw-fXB">
             <objects>
-                <viewController id="tlm-jL-dMH" customClass="ExperienceMeasureViewController" customModule="TestingiOSLidar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExperienceViewController" id="tlm-jL-dMH" customClass="ExperienceMeasureViewController" customModule="TestingiOSLidar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zcB-48-az7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,15 +196,30 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1023" y="798"/>
+            <point key="canvasLocation" x="2487" y="311"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LpJ-7I-QDe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="piA-EB-KLW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aXk-Me-jfT">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wpq-RJ-vMK" kind="relationship" relationship="rootViewController" id="A5c-ad-7S9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pl1-Gc-adZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44.927536231884062" y="310.71428571428572"/>
         </scene>
     </scenes>
     <resources>
         <image name="plus.rectangle.on.folder" catalog="system" width="128" height="95"/>
         <image name="sensor" catalog="system" width="128" height="87"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

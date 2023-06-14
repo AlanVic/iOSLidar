@@ -29,6 +29,10 @@ class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
     
     var timer = Timer()
     
+    deinit {
+        removingView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         augmentedView.addSubview(circleView)
@@ -51,6 +55,15 @@ class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
         
         augmentedView.session = session
         
+    }
+    
+    func removingView() {
+        self.augmentedView?.session.pause()            // there's no session on macOS
+        self.augmentedView?.session.delegate = nil     // there's no session on macOS
+        self.augmentedView?.scene.anchors.removeAll()
+        self.augmentedView?.removeFromSuperview()
+        self.augmentedView?.window?.resignKey()
+        self.augmentedView = nil
     }
     
     @IBAction func didTapView(_ sender: UITapGestureRecognizer) {
