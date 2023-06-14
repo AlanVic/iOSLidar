@@ -601,6 +601,7 @@
 				DEVELOPMENT_TEAM = NM36QJ4P82;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "LIDAR Manga";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -630,6 +631,7 @@
 				DEVELOPMENT_TEAM = NM36QJ4P82;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "LIDAR Manga";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
