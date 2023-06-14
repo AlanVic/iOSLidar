@@ -10,6 +10,8 @@
 		45F392C2689CA1C9780CDCDC /* Pods_TestingiOSLidar_TestingiOSLidarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEED1F069CB259E1937376EB /* Pods_TestingiOSLidar_TestingiOSLidarUITests.framework */; };
 		B819E0393F7DE0B03648EF60 /* Pods_TestingiOSLidarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71EB7024E13419B31685E625 /* Pods_TestingiOSLidarTests.framework */; };
 		B9FDE42124D5B3A586107B15 /* Pods_TestingiOSLidar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A32D137FE96BBD371D2426 /* Pods_TestingiOSLidar.framework */; };
+		DBC5EF2F2A3A58A800DDC1E5 /* FeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC5EF2E2A3A58A800DDC1E5 /* FeaturesView.swift */; };
+		DBC5EF312A3A5BB500DDC1E5 /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC5EF302A3A5BB500DDC1E5 /* FeaturesViewController.swift */; };
 		DBC8039C292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8039B292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift */; };
 		DBCCDA3528D4F05300C1C80E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCDA3428D4F05300C1C80E /* AppDelegate.swift */; };
 		DBCCDA3728D4F05300C1C80E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCDA3628D4F05300C1C80E /* SceneDelegate.swift */; };
@@ -47,6 +49,8 @@
 		71EB7024E13419B31685E625 /* Pods_TestingiOSLidarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingiOSLidarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71BA9E4CA39E97067E99D7E /* Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig"; path = "Target Support Files/Pods-TestingiOSLidar-TestingiOSLidarUITests/Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B9A32D137FE96BBD371D2426 /* Pods_TestingiOSLidar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingiOSLidar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBC5EF2E2A3A58A800DDC1E5 /* FeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesView.swift; sourceTree = "<group>"; };
+		DBC5EF302A3A5BB500DDC1E5 /* FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesViewController.swift; sourceTree = "<group>"; };
 		DBC8039B292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceMeasureViewController.swift; sourceTree = "<group>"; };
 		DBCCDA3128D4F05300C1C80E /* TestingiOSLidar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingiOSLidar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCCDA3428D4F05300C1C80E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +107,6 @@
 				E9FC72E53A3EF6076AAF0B6F /* Pods-TestingiOSLidarTests.debug.xcconfig */,
 				6DD09D463CCADDF83A70299F /* Pods-TestingiOSLidarTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -150,6 +153,8 @@
 				DBCCDA3D28D4F05500C1C80E /* Assets.xcassets */,
 				DBCCDA3F28D4F05500C1C80E /* LaunchScreen.storyboard */,
 				DBCCDA4228D4F05500C1C80E /* Info.plist */,
+				DBC5EF2E2A3A58A800DDC1E5 /* FeaturesView.swift */,
+				DBC5EF302A3A5BB500DDC1E5 /* FeaturesViewController.swift */,
 			);
 			path = TestingiOSLidar;
 			sourceTree = "<group>";
@@ -413,6 +418,8 @@
 				DBCCDA3928D4F05300C1C80E /* ViewController.swift in Sources */,
 				DBC8039C292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift in Sources */,
 				DBCCDA3528D4F05300C1C80E /* AppDelegate.swift in Sources */,
+				DBC5EF312A3A5BB500DDC1E5 /* FeaturesViewController.swift in Sources */,
+				DBC5EF2F2A3A58A800DDC1E5 /* FeaturesView.swift in Sources */,
 				DBCCDA3728D4F05300C1C80E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +601,7 @@
 				DEVELOPMENT_TEAM = NM36QJ4P82;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "LIDAR Manga";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -623,6 +631,7 @@
 				DEVELOPMENT_TEAM = NM36QJ4P82;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "LIDAR Manga";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
