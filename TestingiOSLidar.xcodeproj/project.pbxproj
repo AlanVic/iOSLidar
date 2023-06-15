@@ -149,12 +149,12 @@
 				DBCCDA3628D4F05300C1C80E /* SceneDelegate.swift */,
 				DBC8039B292CFE0C00AD9B74 /* ExperienceViewController.swift */,
 				DBCCDA3828D4F05300C1C80E /* SaveFrameViewController.swift */,
+				DBC5EF2E2A3A58A800DDC1E5 /* FeaturesView.swift */,
+				DBC5EF302A3A5BB500DDC1E5 /* FeaturesViewController.swift */,
 				DBCCDA3A28D4F05300C1C80E /* Main.storyboard */,
 				DBCCDA3D28D4F05500C1C80E /* Assets.xcassets */,
 				DBCCDA3F28D4F05500C1C80E /* LaunchScreen.storyboard */,
 				DBCCDA4228D4F05500C1C80E /* Info.plist */,
-				DBC5EF2E2A3A58A800DDC1E5 /* FeaturesView.swift */,
-				DBC5EF302A3A5BB500DDC1E5 /* FeaturesViewController.swift */,
 			);
 			path = TestingiOSLidar;
 			sourceTree = "<group>";
@@ -596,6 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NM36QJ4P82;
@@ -614,6 +615,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = alanvictor.TestingiOSLidar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -626,6 +628,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NM36QJ4P82;
@@ -644,6 +647,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = alanvictor.TestingiOSLidar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -56,14 +56,14 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         motionManager.startGyroUpdates()
         motionManager.startDeviceMotionUpdates()
 
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
 
-            if let data = self.motionManager.deviceMotion {
-                let measuredAngle = self.measureAngles(fromDataAcceleration: data.gravity)
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
 
-                self.xDegreeMeasured.text = "x: " + "\(measuredAngle.xDegree)º"
-                self.yDegreeMeasured.text = "y: " + "\(measuredAngle.yDegree)º"
-                self.zDegreeMeasured.text = "z: " + "\(measuredAngle.zDegree)º"
+            if let data = self?.motionManager.deviceMotion,
+                let measuredAngle = self?.measureAngles(fromDataAcceleration: data.gravity) {
+                self?.xDegreeMeasured.text = "x: " + "\(measuredAngle.xDegree)º"
+                self?.yDegreeMeasured.text = "y: " + "\(measuredAngle.yDegree)º"
+                self?.zDegreeMeasured.text = "z: " + "\(measuredAngle.zDegree)º"
 
             }
         }
@@ -100,6 +100,11 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         augmentedView.session = session
     }
     
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        timer?.invalidate()
+//    }
+    
     func removingView() {
         self.augmentedView?.session.pause()            // there's no session on macOS
         self.augmentedView?.session.delegate = nil     // there's no session on macOS
@@ -111,12 +116,11 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
     
     func setupARConfiguration() -> ARConfiguration {
         let configuration = ARWorldTrackingConfiguration()
-        
-        
+
         if ARWorldTrackingConfiguration.supportsFrameSemantics(.sceneDepth) {
             configuration.frameSemantics = .sceneDepth
         }
-        
+
         return configuration
     }
     

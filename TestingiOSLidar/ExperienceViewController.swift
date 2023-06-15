@@ -29,10 +29,6 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
     
     var timer = Timer()
     
-    deinit {
-        removingView()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         augmentedView.addSubview(circleView)
@@ -76,7 +72,6 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
     
     func setupARConfiguration() -> ARConfiguration {
         let configuration = ARWorldTrackingConfiguration()
-        
         
         if ARWorldTrackingConfiguration.supportsFrameSemantics(.sceneDepth) {
             configuration.frameSemantics = .sceneDepth
