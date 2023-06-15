@@ -21,7 +21,7 @@ struct AnglesMeasured {
     }
 }
 
-class ViewController: UIViewController, ARSessionDelegate {
+class SaveFrameViewController: UIViewController, ARSessionDelegate {
 
     var session: ARSession!
     

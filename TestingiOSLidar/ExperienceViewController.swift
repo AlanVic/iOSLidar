@@ -9,7 +9,7 @@ import Foundation
 import ARKit
 import RealityKit
 
-class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
+class ExperienceViewController: UIViewController, ARSessionDelegate {
     @IBOutlet weak var augmentedView: ARView!
     @IBOutlet weak var relativeAngleResult: UILabel!
     @IBOutlet weak var distanceResult: UILabel!
