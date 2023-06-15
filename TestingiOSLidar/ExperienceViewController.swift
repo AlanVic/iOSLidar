@@ -9,7 +9,7 @@ import Foundation
 import ARKit
 import RealityKit
 
-class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
+class ExperienceViewController: UIViewController, ARSessionDelegate {
     @IBOutlet weak var augmentedView: ARView!
     @IBOutlet weak var relativeAngleResult: UILabel!
     @IBOutlet weak var distanceResult: UILabel!
@@ -28,10 +28,6 @@ class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
     var session: ARSession!
     
     var timer = Timer()
-    
-    deinit {
-        removingView()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +72,6 @@ class ExperienceMeasureViewController: UIViewController, ARSessionDelegate {
     
     func setupARConfiguration() -> ARConfiguration {
         let configuration = ARWorldTrackingConfiguration()
-        
         
         if ARWorldTrackingConfiguration.supportsFrameSemantics(.sceneDepth) {
             configuration.frameSemantics = .sceneDepth

@@ -12,10 +12,10 @@
 		B9FDE42124D5B3A586107B15 /* Pods_TestingiOSLidar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9A32D137FE96BBD371D2426 /* Pods_TestingiOSLidar.framework */; };
 		DBC5EF2F2A3A58A800DDC1E5 /* FeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC5EF2E2A3A58A800DDC1E5 /* FeaturesView.swift */; };
 		DBC5EF312A3A5BB500DDC1E5 /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC5EF302A3A5BB500DDC1E5 /* FeaturesViewController.swift */; };
-		DBC8039C292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8039B292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift */; };
+		DBC8039C292CFE0C00AD9B74 /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8039B292CFE0C00AD9B74 /* ExperienceViewController.swift */; };
 		DBCCDA3528D4F05300C1C80E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCDA3428D4F05300C1C80E /* AppDelegate.swift */; };
 		DBCCDA3728D4F05300C1C80E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCDA3628D4F05300C1C80E /* SceneDelegate.swift */; };
-		DBCCDA3928D4F05300C1C80E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCDA3828D4F05300C1C80E /* ViewController.swift */; };
+		DBCCDA3928D4F05300C1C80E /* SaveFrameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCDA3828D4F05300C1C80E /* SaveFrameViewController.swift */; };
 		DBCCDA3C28D4F05300C1C80E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCCDA3A28D4F05300C1C80E /* Main.storyboard */; };
 		DBCCDA3E28D4F05500C1C80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBCCDA3D28D4F05500C1C80E /* Assets.xcassets */; };
 		DBCCDA4128D4F05500C1C80E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCCDA3F28D4F05500C1C80E /* LaunchScreen.storyboard */; };
@@ -51,11 +51,11 @@
 		B9A32D137FE96BBD371D2426 /* Pods_TestingiOSLidar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestingiOSLidar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBC5EF2E2A3A58A800DDC1E5 /* FeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesView.swift; sourceTree = "<group>"; };
 		DBC5EF302A3A5BB500DDC1E5 /* FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesViewController.swift; sourceTree = "<group>"; };
-		DBC8039B292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceMeasureViewController.swift; sourceTree = "<group>"; };
+		DBC8039B292CFE0C00AD9B74 /* ExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
 		DBCCDA3128D4F05300C1C80E /* TestingiOSLidar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingiOSLidar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCCDA3428D4F05300C1C80E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBCCDA3628D4F05300C1C80E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DBCCDA3828D4F05300C1C80E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBCCDA3828D4F05300C1C80E /* SaveFrameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFrameViewController.swift; sourceTree = "<group>"; };
 		DBCCDA3B28D4F05300C1C80E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DBCCDA3D28D4F05500C1C80E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBCCDA4028D4F05500C1C80E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -147,14 +147,14 @@
 			children = (
 				DBCCDA3428D4F05300C1C80E /* AppDelegate.swift */,
 				DBCCDA3628D4F05300C1C80E /* SceneDelegate.swift */,
-				DBC8039B292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift */,
-				DBCCDA3828D4F05300C1C80E /* ViewController.swift */,
+				DBC8039B292CFE0C00AD9B74 /* ExperienceViewController.swift */,
+				DBCCDA3828D4F05300C1C80E /* SaveFrameViewController.swift */,
+				DBC5EF2E2A3A58A800DDC1E5 /* FeaturesView.swift */,
+				DBC5EF302A3A5BB500DDC1E5 /* FeaturesViewController.swift */,
 				DBCCDA3A28D4F05300C1C80E /* Main.storyboard */,
 				DBCCDA3D28D4F05500C1C80E /* Assets.xcassets */,
 				DBCCDA3F28D4F05500C1C80E /* LaunchScreen.storyboard */,
 				DBCCDA4228D4F05500C1C80E /* Info.plist */,
-				DBC5EF2E2A3A58A800DDC1E5 /* FeaturesView.swift */,
-				DBC5EF302A3A5BB500DDC1E5 /* FeaturesViewController.swift */,
 			);
 			path = TestingiOSLidar;
 			sourceTree = "<group>";
@@ -415,8 +415,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBCCDA3928D4F05300C1C80E /* ViewController.swift in Sources */,
-				DBC8039C292CFE0C00AD9B74 /* ExperienceMeasureViewController.swift in Sources */,
+				DBCCDA3928D4F05300C1C80E /* SaveFrameViewController.swift in Sources */,
+				DBC8039C292CFE0C00AD9B74 /* ExperienceViewController.swift in Sources */,
 				DBCCDA3528D4F05300C1C80E /* AppDelegate.swift in Sources */,
 				DBC5EF312A3A5BB500DDC1E5 /* FeaturesViewController.swift in Sources */,
 				DBC5EF2F2A3A58A800DDC1E5 /* FeaturesView.swift in Sources */,
@@ -596,6 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NM36QJ4P82;
@@ -614,6 +615,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = alanvictor.TestingiOSLidar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -626,6 +628,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = NM36QJ4P82;
@@ -644,6 +647,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = alanvictor.TestingiOSLidar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
