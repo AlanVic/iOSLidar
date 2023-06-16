@@ -154,7 +154,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
                 let measuredAngles = measureAngles(fromDataAcceleration:data.gravity)
                 jsonDict["RelativeAngles"] = measuredAngles.toArray()
                 //MARK: Remove the line below after testing on Lidar iPhone
-                jsonDict["LIDARData"] = fakeDepthArray()
+//                jsonDict["LIDARData"] = fakeDepthArray()
             }
             
             // Prepare normalized grayscale image with DepthMap
