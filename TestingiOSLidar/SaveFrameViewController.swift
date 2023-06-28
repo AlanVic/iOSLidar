@@ -131,20 +131,14 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
     @IBAction func didTapSaveFrame(_ sender: Any) {
         var jsonDict: Dictionary<String, Any> = Dictionary()
         if let currentFrame = session.currentFrame {
-            let frameImage = currentFrame.capturedImage
+            let frameImage = currentFrame.capturedImage.rotateRelatively()
             framesCount += 1
-            let depthData = currentFrame.sceneDepth?.depthMap
 
             // Process obtained data
             // Prepare RGB image to save
-            let imageSize = CGSize(width: CVPixelBufferGetWidth(frameImage),
-                                   height: CVPixelBufferGetHeight(frameImage))
             let ciImage = CIImage(cvPixelBuffer: frameImage)
-            let context = CIContext.init(options: nil)
-            
-            guard let cgImageRef = context.createCGImage(ciImage, from:
-                                                            CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height)) else { return }
-            let uiImage = UIImage(cgImage: cgImageRef)
+
+            let uiImage = UIImage(ciImage: ciImage)
             
             // Save image
             try! saveImage(uiImage, folder: getTempFolder(), frameCount: framesCount, extensionPathComponents: nil)
@@ -156,9 +150,10 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
                 //MARK: Remove the line below after testing on Lidar iPhone
 //                jsonDict["LIDARData"] = fakeDepthArray()
             }
-            
+
+            let depthData = currentFrame.sceneDepth?.depthMap
             // Prepare normalized grayscale image with DepthMap
-            if let depth = depthData {
+            if let depth = depthData?.rotateRelatively() {
                 let depthWidth = CVPixelBufferGetWidth(depth)
                 let depthHeight = CVPixelBufferGetHeight(depth)
                 CVPixelBufferLockBaseAddress(depth, CVPixelBufferLockFlags(rawValue: 0))
