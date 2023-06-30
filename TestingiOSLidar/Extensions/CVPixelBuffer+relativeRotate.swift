@@ -46,7 +46,7 @@ extension CVPixelBuffer {
         switch orientation {
         case .portrait:
             return .right
-        case .landscapeLeft:
+        case .landscapeRight:
             return .down
         default:
             return nil
