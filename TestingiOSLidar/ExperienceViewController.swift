@@ -10,6 +10,7 @@ import ARKit
 import RealityKit
 
 class ExperienceViewController: UIViewController, ARSessionDelegate {
+    @IBOutlet weak var sliderTarget: UISlider!
     @IBOutlet weak var augmentedView: ARView!
     @IBOutlet weak var relativeAngleResult: UILabel!
     @IBOutlet weak var distanceResult: UILabel!
@@ -19,9 +20,9 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
     private let axisHeightAngle: CGFloat = 57.874
     
     lazy var circleView: UIView = {
-        let circleView = UIView(frame: CGRect(x:0, y: 0, width: 10, height: 10))
-        circleView.layer.cornerRadius = circleView.frame.width / 2
-        circleView.backgroundColor = .red
+        let circleView = TargetView(frame: CGRect(x:0, y: 0, width: 10, height: 10))
+//        circleView.layer.cornerRadius = circleView.frame.width / 2
+//        circleView.backgroundColor = .red
         return circleView
     }()
     
@@ -31,6 +32,8 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sliderTarget.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
+
         augmentedView.addSubview(circleView)
         
         augmentedView.session.delegate = self
@@ -69,7 +72,10 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
         print("the transformation is: " , convertCGPointToLidarRelation(location: location))
         addACircleToView(onLocation: location)
     }
-    
+    @IBAction func sliderActionTarget(_ sender: UISlider) {
+        print(sender.value)
+    }
+
     func setupARConfiguration() -> ARConfiguration {
         let configuration = ARWorldTrackingConfiguration()
         
