@@ -10,6 +10,7 @@
 		58EF3F808580C5C57F31BDD3 /* libPods-TestingiOSLidar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DDABBD5B73BD7E327127DFF /* libPods-TestingiOSLidar.a */; };
 		955E2EDCA7AA13470985A2F4 /* libPods-TestingiOSLidarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F1C45ADF5A0B7321CB38AA /* libPods-TestingiOSLidarTests.a */; };
 		BCD64F36BCC1B9401CAD950C /* libPods-TestingiOSLidar-TestingiOSLidarUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA14800F44876D8E6B2C8186 /* libPods-TestingiOSLidar-TestingiOSLidarUITests.a */; };
+		DB7390B82A4B69C0009C8F0F /* CVPixelBuffer+relativeRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7390B72A4B69C0009C8F0F /* CVPixelBuffer+relativeRotate.swift */; };
 		DBC5EF2F2A3A58A800DDC1E5 /* FeaturesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC5EF2E2A3A58A800DDC1E5 /* FeaturesView.swift */; };
 		DBC5EF312A3A5BB500DDC1E5 /* FeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC5EF302A3A5BB500DDC1E5 /* FeaturesViewController.swift */; };
 		DBC8039C292CFE0C00AD9B74 /* ExperienceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC8039B292CFE0C00AD9B74 /* ExperienceViewController.swift */; };
@@ -48,6 +49,7 @@
 		6DD09D463CCADDF83A70299F /* Pods-TestingiOSLidarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingiOSLidarTests.release.xcconfig"; path = "Target Support Files/Pods-TestingiOSLidarTests/Pods-TestingiOSLidarTests.release.xcconfig"; sourceTree = "<group>"; };
 		9DDABBD5B73BD7E327127DFF /* libPods-TestingiOSLidar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestingiOSLidar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71BA9E4CA39E97067E99D7E /* Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig"; path = "Target Support Files/Pods-TestingiOSLidar-TestingiOSLidarUITests/Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DB7390B72A4B69C0009C8F0F /* CVPixelBuffer+relativeRotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+relativeRotate.swift"; sourceTree = "<group>"; };
 		DBC5EF2E2A3A58A800DDC1E5 /* FeaturesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesView.swift; sourceTree = "<group>"; };
 		DBC5EF302A3A5BB500DDC1E5 /* FeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesViewController.swift; sourceTree = "<group>"; };
 		DBC8039B292CFE0C00AD9B74 /* ExperienceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DB7390B62A4B695E009C8F0F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DB7390B72A4B69C0009C8F0F /* CVPixelBuffer+relativeRotate.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DBCCDA2828D4F05300C1C80E = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		DBCCDA3328D4F05300C1C80E /* TestingiOSLidar */ = {
 			isa = PBXGroup;
 			children = (
+				DB7390B62A4B695E009C8F0F /* Extensions */,
 				DBCCDA3428D4F05300C1C80E /* AppDelegate.swift */,
 				DBCCDA3628D4F05300C1C80E /* SceneDelegate.swift */,
 				DBC8039B292CFE0C00AD9B74 /* ExperienceViewController.swift */,
@@ -379,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB7390B82A4B69C0009C8F0F /* CVPixelBuffer+relativeRotate.swift in Sources */,
 				DBCCDA3928D4F05300C1C80E /* SaveFrameViewController.swift in Sources */,
 				DBC8039C292CFE0C00AD9B74 /* ExperienceViewController.swift in Sources */,
 				DBCCDA3528D4F05300C1C80E /* AppDelegate.swift in Sources */,

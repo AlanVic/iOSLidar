@@ -24,6 +24,8 @@ struct AnglesMeasured {
 class SaveFrameViewController: UIViewController, ARSessionDelegate {
 
     var session: ARSession!
+
+    var orientationLast = UIInterfaceOrientation.portrait
     
     var framesCount: Int = 0 {
         didSet {
@@ -37,7 +39,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
     @IBOutlet weak var augmentedView: ARView!
     @IBOutlet weak var saveFramesLabel: UILabel!
 
-    let motionManager = CMMotionManager()
+    var motionManager: CMMotionManager?
     
     deinit {
         removingView()
@@ -53,21 +55,66 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         session = ARSession()
         session.delegate = self
 
-        motionManager.startGyroUpdates()
-        motionManager.startDeviceMotionUpdates()
+        initializeMotionManager()
+    }
 
+    private func initializeMotionManager() {
+        motionManager = CMMotionManager()
+        motionManager?.accelerometerUpdateInterval = 0.2
+        motionManager?.gyroUpdateInterval = 0.2
+        motionManager?.deviceMotionUpdateInterval = 0.2
+        motionManager?.startDeviceMotionUpdates(to: (OperationQueue.current)!, withHandler: {
+            [weak self] (deviceMotionData, error) in
+            if error == nil, let data = deviceMotionData {
+                if let measuredAngle = self?.measureAngles(fromDataAcceleration: data.gravity) {
+                    self?.xDegreeMeasured.text = "x: " + "\(measuredAngle.xDegree)º"
+                    self?.yDegreeMeasured.text = "y: " + "\(measuredAngle.yDegree)º"
+                    self?.zDegreeMeasured.text = "z: " + "\(measuredAngle.zDegree)º"
+                }
+            } else {
+                print("\(error!)")
+            }
+        })
+        motionManager?.startAccelerometerUpdates(to: (OperationQueue.current)!, withHandler: {
+            [weak self] (accelerometerData, error) -> Void in
+            if error == nil {
+                self?.outputAccelerationData((accelerometerData?.acceleration)!)
+            } else {
+                print("\(error!)")
+            }
+        })
+    }
 
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in
-
-            if let data = self?.motionManager.deviceMotion,
-                let measuredAngle = self?.measureAngles(fromDataAcceleration: data.gravity) {
-                self?.xDegreeMeasured.text = "x: " + "\(measuredAngle.xDegree)º"
-                self?.yDegreeMeasured.text = "y: " + "\(measuredAngle.yDegree)º"
-                self?.zDegreeMeasured.text = "z: " + "\(measuredAngle.zDegree)º"
+    private func outputAccelerationData(_ acceleration: CMAcceleration) {
+        var orientationNew: UIInterfaceOrientation
+            if acceleration.x >= 0.75 {
+                orientationNew = .landscapeRight
+                print("landscapeRight")
+            }
+            else if acceleration.x <= -0.75 {
+                orientationNew = .landscapeLeft
+                print("landscapeLeft")
+            }
+            else if acceleration.y <= -0.75 {
+                orientationNew = .portrait
+                print("portrait")
 
             }
-        }
+            else if acceleration.y >= 0.75 {
+                orientationNew = .portraitUpsideDown
+                print("portraitUpsideDown")
+            }
+            else {
+                // Consider same as last time
+                return
+            }
+
+            if orientationNew == orientationLast {
+                return
+            }
+            orientationLast = orientationNew
     }
+
 
     private func measureAngles(fromDataAcceleration acceleration: CMAcceleration) -> AnglesMeasured {
         var xDegree = acos(acceleration.x/1) * 180 / .pi
@@ -131,34 +178,29 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
     @IBAction func didTapSaveFrame(_ sender: Any) {
         var jsonDict: Dictionary<String, Any> = Dictionary()
         if let currentFrame = session.currentFrame {
-            let frameImage = currentFrame.capturedImage
+            let frameImage = currentFrame.capturedImage.rotateRelatively(withOrientation: orientationLast)
             framesCount += 1
-            let depthData = currentFrame.sceneDepth?.depthMap
 
             // Process obtained data
             // Prepare RGB image to save
-            let imageSize = CGSize(width: CVPixelBufferGetWidth(frameImage),
-                                   height: CVPixelBufferGetHeight(frameImage))
             let ciImage = CIImage(cvPixelBuffer: frameImage)
-            let context = CIContext.init(options: nil)
-            
-            guard let cgImageRef = context.createCGImage(ciImage, from:
-                                                            CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height)) else { return }
-            let uiImage = UIImage(cgImage: cgImageRef)
+
+            let uiImage = UIImage(ciImage: ciImage)
             
             // Save image
             try! saveImage(uiImage, folder: getTempFolder(), frameCount: framesCount, extensionPathComponents: nil)
 
             //Measure relative angle from three axis
-            if let data = self.motionManager.deviceMotion {
+            if let data = self.motionManager?.deviceMotion {
                 let measuredAngles = measureAngles(fromDataAcceleration:data.gravity)
                 jsonDict["RelativeAngles"] = measuredAngles.toArray()
                 //MARK: Remove the line below after testing on Lidar iPhone
 //                jsonDict["LIDARData"] = fakeDepthArray()
             }
-            
+
+            let depthData = currentFrame.sceneDepth?.depthMap
             // Prepare normalized grayscale image with DepthMap
-            if let depth = depthData {
+            if let depth = depthData?.rotateRelatively(withOrientation: orientationLast) {
                 let depthWidth = CVPixelBufferGetWidth(depth)
                 let depthHeight = CVPixelBufferGetHeight(depth)
                 CVPixelBufferLockBaseAddress(depth, CVPixelBufferLockFlags(rawValue: 0))
