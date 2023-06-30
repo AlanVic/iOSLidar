@@ -8,10 +8,10 @@
 import UIKit
 
 extension CVPixelBuffer {
-    func rotateRelatively() -> CVPixelBuffer {
+    func rotateRelatively(withOrientation orientation: UIInterfaceOrientation) -> CVPixelBuffer {
 
         var newPixelBuffer: CVPixelBuffer?
-        let size = relativeCGSize()
+        let size = relativeCGSize(withInterfaceOrientation: orientation)
         let error = CVPixelBufferCreate(kCFAllocatorDefault,
                                         Int(size.width),
                                         Int(size.height),
@@ -22,7 +22,7 @@ extension CVPixelBuffer {
             return self
         }
         let ciImage: CIImage
-        if let orientation = analiseOrientation() {
+        if let orientation = relativeOrientation(withInterfaceOrientation: orientation) {
             ciImage = CIImage(cvPixelBuffer: self).oriented(orientation)
         } else {
             ciImage = CIImage(cvPixelBuffer: self)
@@ -32,9 +32,9 @@ extension CVPixelBuffer {
         return newPixelBuffer!
     }
 
-    private func relativeCGSize() -> CGSize {
+    private func relativeCGSize(withInterfaceOrientation orientation: UIInterfaceOrientation) -> CGSize {
         let tempCGSize = CGSize(width: CVPixelBufferGetWidth(self), height: CVPixelBufferGetHeight(self))
-        switch UIDevice.current.orientation {
+        switch orientation {
         case .portrait, .portraitUpsideDown:
             return CGSize(width: tempCGSize.height, height: tempCGSize.width)
         default:
@@ -42,11 +42,11 @@ extension CVPixelBuffer {
         }
     }
 
-    private func analiseOrientation() -> CGImagePropertyOrientation? {
-        switch UIDevice.current.orientation {
+    private func relativeOrientation(withInterfaceOrientation orientation: UIInterfaceOrientation) -> CGImagePropertyOrientation? {
+        switch orientation {
         case .portrait:
             return .right
-        case .landscapeRight:
+        case .landscapeLeft:
             return .down
         default:
             return nil
