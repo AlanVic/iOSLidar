@@ -26,6 +26,8 @@ class TargetView: UIView {
         return view
     }()
 
+    private lazy var sizeHeightAnchor: NSLayoutConstraint = self.heightAnchor.constraint(equalToConstant: 30)
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -59,7 +61,7 @@ class TargetView: UIView {
 
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 30),
+            sizeHeightAnchor,
             self.widthAnchor.constraint(equalTo: self.heightAnchor),
 
             borderView.widthAnchor.constraint(equalTo: self.widthAnchor),
@@ -72,6 +74,11 @@ class TargetView: UIView {
             dotView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             dotView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
+    }
+
+    public func setSizeTarget(_ size: CGFloat) {
+        sizeHeightAnchor.constant = size
+        //layoutSubviews()
     }
 
 }

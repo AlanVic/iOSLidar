@@ -19,7 +19,7 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
     private let axisWidthAngle: CGFloat = 81.273
     private let axisHeightAngle: CGFloat = 57.874
     
-    lazy var circleView: UIView = {
+    lazy var circleView: TargetView = {
         let circleView = TargetView()
         return circleView
     }()
@@ -71,6 +71,7 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
         addACircleToView(onLocation: location)
     }
     @IBAction func sliderActionTarget(_ sender: UISlider) {
+        circleView.setSizeTarget(CGFloat(30*sender.value))
         print(sender.value)
     }
 
@@ -93,7 +94,7 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
     func addACircleToView(onLocation location: CGPoint) {
         circleView.layer.position = location
 //        circleView.layoutSubviews()
-        augmentedView.layoutSubviews()
+        //augmentedView.layoutSubviews()
     }
     
     func getDataLidar() {
