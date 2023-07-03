@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -124,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNo-EL-6aI">
-                                <rect key="frame" x="0.0" y="64" width="414" height="552"/>
+                                <rect key="frame" x="0.0" y="64" width="382" height="509.5"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dNo-EL-6aI" secondAttribute="height" multiplier="3:4" id="6rA-lI-P47"/>
@@ -134,37 +134,47 @@
                                 </connections>
                             </arView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TgT-Na-E2D">
-                                <rect key="frame" x="0.0" y="616" width="145" height="193"/>
+                                <rect key="frame" x="0.0" y="573.5" width="142" height="178"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IZK-kx-SuM">
-                                <rect key="frame" x="145" y="639.5" width="269" height="146"/>
+                                <rect key="frame" x="142" y="582" width="272" height="161"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distância calculada LIDAR:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05z-9M-GBm">
-                                        <rect key="frame" x="0.0" y="0.0" width="269" height="23"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WH2-2e-86S">
-                                        <rect key="frame" x="0.0" y="23" width="269" height="50"/>
+                                        <rect key="frame" x="0.0" y="23" width="272" height="65"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ângulo relativo ao eixo Z:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzZ-Fa-4yO">
-                                        <rect key="frame" x="0.0" y="73" width="269" height="23"/>
+                                        <rect key="frame" x="0.0" y="88" width="272" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hij-Ch-JPZ">
-                                        <rect key="frame" x="0.0" y="96" width="269" height="50"/>
+                                        <rect key="frame" x="0.0" y="111" width="272" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <slider opaque="NO" contentMode="left" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="79c-Bs-QwK">
+                                <rect key="frame" x="271" y="303.5" width="254" height="31"/>
+                                <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="3Yb-Di-yoa"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderActionTarget:" destination="tlm-jL-dMH" eventType="valueChanged" id="dzd-G3-Fug"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9hF-fb-Kld"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -172,13 +182,15 @@
                             <constraint firstItem="dNo-EL-6aI" firstAttribute="top" secondItem="9hF-fb-Kld" secondAttribute="top" constant="16" id="5bQ-Gf-r7s"/>
                             <constraint firstItem="IZK-kx-SuM" firstAttribute="centerY" secondItem="TgT-Na-E2D" secondAttribute="centerY" id="8NQ-87-MMK"/>
                             <constraint firstItem="TgT-Na-E2D" firstAttribute="leading" secondItem="9hF-fb-Kld" secondAttribute="leading" id="HiF-e5-uQg"/>
-                            <constraint firstItem="dNo-EL-6aI" firstAttribute="centerX" secondItem="9hF-fb-Kld" secondAttribute="centerX" id="LMH-YD-Vxd"/>
-                            <constraint firstItem="TgT-Na-E2D" firstAttribute="width" secondItem="dNo-EL-6aI" secondAttribute="width" multiplier="0.35" id="MMv-fK-1P0"/>
                             <constraint firstItem="TgT-Na-E2D" firstAttribute="top" secondItem="dNo-EL-6aI" secondAttribute="bottom" id="PPE-dk-qcG"/>
+                            <constraint firstItem="79c-Bs-QwK" firstAttribute="centerY" secondItem="dNo-EL-6aI" secondAttribute="centerY" id="SXd-Ci-i3G"/>
                             <constraint firstItem="TgT-Na-E2D" firstAttribute="height" secondItem="dNo-EL-6aI" secondAttribute="height" multiplier="0.35" id="ZXh-Gv-Kg0"/>
                             <constraint firstItem="9hF-fb-Kld" firstAttribute="trailing" secondItem="IZK-kx-SuM" secondAttribute="trailing" id="awp-57-5wd"/>
                             <constraint firstItem="IZK-kx-SuM" firstAttribute="leading" secondItem="TgT-Na-E2D" secondAttribute="trailing" id="h4i-Gb-55m"/>
-                            <constraint firstItem="dNo-EL-6aI" firstAttribute="width" secondItem="zcB-48-az7" secondAttribute="width" id="i19-wg-Dzm"/>
+                            <constraint firstItem="dNo-EL-6aI" firstAttribute="leading" secondItem="9hF-fb-Kld" secondAttribute="leading" id="lNe-cp-xg2"/>
+                            <constraint firstItem="TgT-Na-E2D" firstAttribute="width" secondItem="dNo-EL-6aI" secondAttribute="height" multiplier="29:104" id="lXI-Rl-qlY"/>
+                            <constraint firstAttribute="trailing" secondItem="79c-Bs-QwK" secondAttribute="trailing" constant="-109" id="m4J-I8-kN8"/>
+                            <constraint firstItem="9hF-fb-Kld" firstAttribute="trailing" secondItem="dNo-EL-6aI" secondAttribute="trailing" constant="32" id="xPa-ch-ij2"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Experiência" image="sensor" catalog="system" selectedImage="sensor" id="gZM-4n-ABD"/>
@@ -187,6 +199,7 @@
                         <outlet property="distanceResult" destination="WH2-2e-86S" id="kJQ-tI-h6k"/>
                         <outlet property="relativeAngleResult" destination="Hij-Ch-JPZ" id="FDX-Nt-ubx"/>
                         <outlet property="representationLidarImage" destination="TgT-Na-E2D" id="Wz0-bq-Eux"/>
+                        <outlet property="sliderTarget" destination="79c-Bs-QwK" id="Qzt-fd-LoA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3RY-mF-yXV" sceneMemberID="firstResponder"/>
@@ -196,7 +209,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2487" y="311"/>
+            <point key="canvasLocation" x="2486.9565217391305" y="310.71428571428572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LpJ-7I-QDe">

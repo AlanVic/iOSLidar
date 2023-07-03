@@ -10,6 +10,7 @@ import ARKit
 import RealityKit
 
 class ExperienceViewController: UIViewController, ARSessionDelegate {
+    @IBOutlet weak var sliderTarget: UISlider!
     @IBOutlet weak var augmentedView: ARView!
     @IBOutlet weak var relativeAngleResult: UILabel!
     @IBOutlet weak var distanceResult: UILabel!
@@ -18,10 +19,8 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
     private let axisWidthAngle: CGFloat = 81.273
     private let axisHeightAngle: CGFloat = 57.874
     
-    lazy var circleView: UIView = {
-        let circleView = UIView(frame: CGRect(x:0, y: 0, width: 10, height: 10))
-        circleView.layer.cornerRadius = circleView.frame.width / 2
-        circleView.backgroundColor = .red
+    lazy var circleView: TargetView = {
+        let circleView = TargetView()
         return circleView
     }()
     
@@ -31,6 +30,8 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        sliderTarget.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
+
         augmentedView.addSubview(circleView)
         
         augmentedView.session.delegate = self
@@ -63,13 +64,17 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
     }
     
     @IBAction func didTapView(_ sender: UITapGestureRecognizer) {
-        print("did tap view", sender)
+//        print("did tap view", sender)
         let location = sender.location(in: augmentedView)
-        print("the location is: ", location)
-        print("the transformation is: " , convertCGPointToLidarRelation(location: location))
+//        print("the location is: ", location)
+//        print("the transformation is: " , convertCGPointToLidarRelation(location: location))
         addACircleToView(onLocation: location)
     }
-    
+    @IBAction func sliderActionTarget(_ sender: UISlider) {
+        circleView.setSizeTarget(CGFloat(30*sender.value))
+        print(sender.value)
+    }
+
     func setupARConfiguration() -> ARConfiguration {
         let configuration = ARWorldTrackingConfiguration()
         
@@ -88,7 +93,8 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
     
     func addACircleToView(onLocation location: CGPoint) {
         circleView.layer.position = location
-        augmentedView.layoutSubviews()
+//        circleView.layoutSubviews()
+        //augmentedView.layoutSubviews()
     }
     
     func getDataLidar() {
