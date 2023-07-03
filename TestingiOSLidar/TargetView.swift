@@ -9,19 +9,19 @@ import UIKit
 
 class TargetView: UIView {
     private let dotView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 2, height: 2))
-        view.layer.cornerRadius = view.frame.width / 2
+        let view = UIView(frame: .zero)
         view.backgroundColor = .red
+        view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     } ()
 
     private let borderView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: 4, height: 4))
+        let view = UIView(frame: .zero)
         view.layer.borderWidth = 2
-        view.layer.cornerRadius = view.frame.width / 2
         view.backgroundColor = .clear
         view.layer.borderColor = UIColor.red.cgColor
+        view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -36,19 +36,30 @@ class TargetView: UIView {
         setupView()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupCornerRadius()
+    }
+
     private func setupView() {
+        self.translatesAutoresizingMaskIntoConstraints = false
         addViews()
         configConstraints()
     }
 
+    private func setupCornerRadius() {
+        self.borderView.layer.cornerRadius = borderView.frame.width / 2
+        self.dotView.layer.cornerRadius = dotView.frame.width / 2
+    }
+
     private func addViews() {
         self.addSubview(borderView)
-        self.borderView.addSubview(dotView)
+        self.addSubview(dotView)
     }
 
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 4),
+            self.heightAnchor.constraint(equalToConstant: 30),
             self.widthAnchor.constraint(equalTo: self.heightAnchor),
 
             borderView.widthAnchor.constraint(equalTo: self.widthAnchor),
@@ -56,10 +67,10 @@ class TargetView: UIView {
             self.centerXAnchor.constraint(equalTo: borderView.centerXAnchor),
             self.centerYAnchor.constraint(equalTo: borderView.centerYAnchor),
 
-            dotView.widthAnchor.constraint(equalToConstant: 2),
-            dotView.heightAnchor.constraint(equalToConstant: 2),
-            dotView.centerXAnchor.constraint(equalTo: borderView.centerXAnchor),
-            dotView.centerYAnchor.constraint(equalTo: borderView.centerYAnchor)
+            dotView.widthAnchor.constraint(equalToConstant: 5),
+            dotView.heightAnchor.constraint(equalToConstant: 5),
+            dotView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            dotView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
 
