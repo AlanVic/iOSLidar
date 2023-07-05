@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,7 +51,7 @@
                                     <action selector="didTapSaveFrame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zwy-Ce-CvQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Frames salvos: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-62-Haj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frames salvos: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-62-Haj">
                                 <rect key="frame" x="143" y="768" width="128" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="7S3-xK-Brn"/>
@@ -82,6 +82,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41P-sk-4rj">
+                                <rect key="frame" x="0.0" y="179" width="414" height="552"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="quY-UB-mgX">
+                                        <rect key="frame" x="140" y="80" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -89,22 +100,28 @@
                             <constraint firstItem="dh6-qD-7Yg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0yx-dq-73C"/>
                             <constraint firstItem="dh6-qD-7Yg" firstAttribute="bottom" secondItem="cmB-M8-dG2" secondAttribute="bottom" constant="-16" id="54I-Aj-BYB"/>
                             <constraint firstItem="dh6-qD-7Yg" firstAttribute="top" secondItem="Bl9-Gd-FZ4" secondAttribute="bottom" constant="8" id="5kg-xB-0Ln"/>
+                            <constraint firstItem="41P-sk-4rj" firstAttribute="width" secondItem="cmB-M8-dG2" secondAttribute="width" id="BsP-gv-Ev9"/>
                             <constraint firstItem="lWx-ti-qib" firstAttribute="top" secondItem="5mY-62-Haj" secondAttribute="bottom" constant="16" id="Btc-y8-oid"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CJg-nd-qFr"/>
                             <constraint firstItem="EYl-fG-GM7" firstAttribute="top" secondItem="lWx-ti-qib" secondAttribute="top" id="DTC-2k-jkr"/>
                             <constraint firstItem="Bl9-Gd-FZ4" firstAttribute="top" secondItem="Rtb-55-KTg" secondAttribute="bottom" constant="8" id="FZz-8C-jNr"/>
+                            <constraint firstItem="41P-sk-4rj" firstAttribute="centerX" secondItem="cmB-M8-dG2" secondAttribute="centerX" id="GqC-qu-71t"/>
+                            <constraint firstItem="41P-sk-4rj" firstAttribute="centerY" secondItem="cmB-M8-dG2" secondAttribute="centerY" id="HLz-jt-EvY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EYl-fG-GM7" secondAttribute="trailing" constant="16" id="RfQ-nT-Bm9"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Scv-ui-EbX"/>
                             <constraint firstItem="Bl9-Gd-FZ4" firstAttribute="leading" secondItem="dh6-qD-7Yg" secondAttribute="leading" id="cfe-Dn-jkP"/>
                             <constraint firstItem="lWx-ti-qib" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dbK-ML-aIq"/>
+                            <constraint firstItem="5mY-62-Haj" firstAttribute="centerX" secondItem="cmB-M8-dG2" secondAttribute="centerX" id="rX4-t2-rbl"/>
                             <constraint firstItem="Rtb-55-KTg" firstAttribute="leading" secondItem="Bl9-Gd-FZ4" secondAttribute="leading" id="u68-EU-PPX"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vBn-9K-xyi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lWx-ti-qib" secondAttribute="bottom" constant="16" id="vhv-wr-J2p"/>
+                            <constraint firstItem="41P-sk-4rj" firstAttribute="height" secondItem="cmB-M8-dG2" secondAttribute="height" id="yh2-Nb-Udu"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Salvar" image="plus.rectangle.on.folder" catalog="system" selectedImage="plus.rectangle.on.folder" id="8Ts-lF-ZbP"/>
                     <connections>
                         <outlet property="augmentedView" destination="cmB-M8-dG2" id="EGU-uF-mfO"/>
+                        <outlet property="canvaView" destination="41P-sk-4rj" id="LQU-KX-L9B"/>
                         <outlet property="saveFramesLabel" destination="5mY-62-Haj" id="WDB-Bn-v5h"/>
                         <outlet property="xDegreeMeasured" destination="Rtb-55-KTg" id="ECl-j1-pSw"/>
                         <outlet property="yDegreeMeasured" destination="Bl9-Gd-FZ4" id="AOw-0Q-zJ9"/>

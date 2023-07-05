@@ -33,6 +33,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         }
     }
     
+    @IBOutlet weak var canvaView: UIView!
     @IBOutlet weak var xDegreeMeasured: UILabel!
     @IBOutlet weak var yDegreeMeasured: UILabel!
     @IBOutlet weak var zDegreeMeasured: UILabel!
@@ -186,6 +187,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
             let ciImage = CIImage(cvPixelBuffer: frameImage)
 
             let uiImage = UIImage(ciImage: ciImage)
+//            let imageToSave = uiImage.mergeWith(viewToRender: canvaView)
             
             // Save image
             try! saveImage(uiImage, folder: getTempFolder(), frameCount: framesCount, extensionPathComponents: nil)
