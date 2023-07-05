@@ -171,7 +171,6 @@
 				DBCCDA3D28D4F05500C1C80E /* Assets.xcassets */,
 				DBCCDA3F28D4F05500C1C80E /* LaunchScreen.storyboard */,
 				DBCCDA4228D4F05500C1C80E /* Info.plist */,
-				DB7390BB2A4F7D95009C8F0F /* TargetView.swift */,
 			);
 			path = TestingiOSLidar;
 			sourceTree = "<group>";
@@ -196,6 +195,7 @@
 		DBEB14132A54A11C00D5DCE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DB7390BB2A4F7D95009C8F0F /* TargetView.swift */,
 				DBEB14142A54A13500D5DCE3 /* CameraButton.swift */,
 			);
 			path = Views;
@@ -600,6 +600,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -635,6 +636,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

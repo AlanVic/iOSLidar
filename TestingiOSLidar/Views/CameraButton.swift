@@ -12,7 +12,7 @@ import UIKit
 class CameraButton: UIButton {
     //create a new layer to render the various circles
     var pathLayer:CAShapeLayer!
-    let animationDuration = 0.4
+    let animationDuration = 0.2
     
     override init(frame: CGRect) {
         
@@ -40,7 +40,7 @@ class CameraButton: UIButton {
         self.pathLayer.strokeColor = nil
         
         //set the color for the inner shape
-        self.pathLayer.fillColor = UIColor.red.cgColor
+        self.pathLayer.fillColor = UIColor.white.cgColor
         
         //add the path layer to the control layer so it gets drawn
         self.layer.addSublayer(self.pathLayer)
@@ -103,9 +103,10 @@ class CameraButton: UIButton {
     @objc func touchUpInside(sender:UIButton)
     {
         //Create the animation to restore the color of the button
-        let colorChange = CABasicAnimation(keyPath: "fillColor")
+        let colorChange = CABasicAnimation(keyPath: "path")
         colorChange.duration = animationDuration;
-        colorChange.toValue = UIColor.red.cgColor
+//        colorChange.toValue = UIColor.white.cgColor
+        colorChange.toValue = self.innerCirclePath().cgPath
         
         //make sure that the color animation is not reverted once the animation is completed
         colorChange.fillMode = CAMediaTimingFillMode.forwards
@@ -115,21 +116,22 @@ class CameraButton: UIButton {
         colorChange.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         
         //add the animation
-        self.pathLayer.add(colorChange, forKey:"darkColor")
+        self.pathLayer.add(colorChange, forKey:"")
         
         //change the state of the control to update the shape
-        self.isSelected = !self.isSelected
+//        self.isSelected = !self.isSelected
     }
     
     @objc func touchDown(sender:UIButton)
     {
         //when the user touches the button, the inner shape should change transparency
         //create the animation for the fill color
-        let morph = CABasicAnimation(keyPath: "fillColor")
+        let morph = CABasicAnimation(keyPath: "path")
         morph.duration = animationDuration;
         
         //set the value we want to animate to
-        morph.toValue = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5).cgColor
+//        morph.toValue = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        morph.toValue = self.innerSquarePath().cgPath
         
         //ensure the animation does not get reverted once completed
         morph.fillMode = CAMediaTimingFillMode.forwards
@@ -142,7 +144,7 @@ class CameraButton: UIButton {
     override func draw(_ rect: CGRect) {
         //always draw the outer ring, the inner control is drawn during the animations
         let outerRing = UIBezierPath(ovalIn: CGRect(x:3, y:3, width:60, height:60))
-        outerRing.lineWidth = 6
+        outerRing.lineWidth = 4
         UIColor.white.setStroke()
         outerRing.stroke()
     }
@@ -170,6 +172,6 @@ class CameraButton: UIButton {
     
     func innerSquarePath () -> UIBezierPath
     {
-        return UIBezierPath(roundedRect: CGRect(x:18, y:18, width:30, height:30), cornerRadius: 4)
+        return UIBezierPath(roundedRect: CGRect(x:11, y:11, width:44, height:44), cornerRadius: 22)
     }
 }
