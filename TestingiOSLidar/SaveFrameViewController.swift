@@ -22,9 +22,9 @@ struct AnglesMeasured {
 }
 
 class SaveFrameViewController: UIViewController, ARSessionDelegate {
-
+    
     var session: ARSession!
-
+    
     var orientationLast = UIInterfaceOrientation.portrait {
         willSet {
             rotateShareButton(lastOrientation: orientationLast, newOrientation: newValue)
@@ -47,7 +47,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
                   || lastOrientation == .landscapeRight && newOrientation == .landscapeLeft) {
             angleRotate = .pi
         }
-    
+        
         
         UIView.animate(withDuration: 0.2, animations: ( {
             self.shareButton.transform = CGAffineTransformRotate(self.shareButton.transform, angleRotate)
@@ -63,7 +63,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
     @IBOutlet weak var augmentedView: ARView!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var saveFramesLabel: UILabel!
-
+    
     var motionManager: CMMotionManager?
     
     deinit {
@@ -74,22 +74,22 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         super.viewDidLoad()
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 32, weight: .medium, scale: .large)
         let largeBoldDoc = UIImage(systemName: "square.and.arrow.up.circle", withConfiguration: largeConfig)
-
-
+        
+        
         shareButton.setImage(largeBoldDoc, for: .normal)
         
         
         clearTempFolder()
-//        UIButton().imageView?.contentMode = UIView.ContentMode.scaleAspectFill
+        //        UIButton().imageView?.contentMode = UIView.ContentMode.scaleAspectFill
         
         augmentedView.session.delegate = self
         
         session = ARSession()
         session.delegate = self
-
+        
         initializeMotionManager()
     }
-
+    
     private func initializeMotionManager() {
         motionManager = CMMotionManager()
         motionManager?.accelerometerUpdateInterval = 0.2
@@ -104,47 +104,47 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
             }
         })
     }
-
+    
     private func outputAccelerationData(_ acceleration: CMAcceleration) {
         var orientationNew: UIInterfaceOrientation
-            if acceleration.x >= 0.75 {
-                orientationNew = .landscapeRight
-                print("landscapeRight")
-            }
-            else if acceleration.x <= -0.75 {
-                orientationNew = .landscapeLeft
-                print("landscapeLeft")
-            }
-            else if acceleration.y <= -0.75 {
-                orientationNew = .portrait
-                print("portrait")
-
-            }
-            else if acceleration.y >= 0.75 {
-                orientationNew = .portraitUpsideDown
-                print("portraitUpsideDown")
-            }
-            else {
-                // Consider same as last time
-                return
-            }
-
-            if orientationNew == orientationLast {
-                return
-            }
-            orientationLast = orientationNew
+        if acceleration.x >= 0.75 {
+            orientationNew = .landscapeRight
+            print("landscapeRight")
+        }
+        else if acceleration.x <= -0.75 {
+            orientationNew = .landscapeLeft
+            print("landscapeLeft")
+        }
+        else if acceleration.y <= -0.75 {
+            orientationNew = .portrait
+            print("portrait")
+            
+        }
+        else if acceleration.y >= 0.75 {
+            orientationNew = .portraitUpsideDown
+            print("portraitUpsideDown")
+        }
+        else {
+            // Consider same as last time
+            return
+        }
+        
+        if orientationNew == orientationLast {
+            return
+        }
+        orientationLast = orientationNew
     }
-
-
+    
+    
     private func measureAngles(fromDataAcceleration acceleration: CMAcceleration) -> AnglesMeasured {
         var xDegree = acos(acceleration.x/1) * 180 / .pi
         var yDegree = acos(acceleration.y/1) * 180 / .pi
         var zDegree = acos(acceleration.z/1) * 180 / .pi
-
-//        print("--------------------------")
-//        print("x:" + "\(acceleration.x)")
-//        print("y:" + "\(acceleration.y)")
-//        print("z:" + "\(acceleration.z)")
+        
+        //        print("--------------------------")
+        //        print("x:" + "\(acceleration.x)")
+        //        print("y:" + "\(acceleration.y)")
+        //        print("z:" + "\(acceleration.z)")
         if (acceleration.y > 0) {
             xDegree = 180 + (180 - xDegree)
         }
@@ -154,7 +154,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         if (acceleration.x > 0) {
             zDegree = 180 + (180 - zDegree)
         }
-
+        
         return AnglesMeasured(xDegree: xDegree, yDegree: yDegree, zDegree: zDegree)
     }
     
@@ -167,10 +167,10 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         augmentedView.session = session
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        timer?.invalidate()
-//    }
+    //    override func viewWillDisappear(_ animated: Bool) {
+    //        super.viewWillDisappear(animated)
+    //        timer?.invalidate()
+    //    }
     
     func removingView() {
         self.augmentedView?.session.pause()            // there's no session on macOS
@@ -183,11 +183,11 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
     
     func setupARConfiguration() -> ARConfiguration {
         let configuration = ARWorldTrackingConfiguration()
-
+        
         if ARWorldTrackingConfiguration.supportsFrameSemantics(.sceneDepth) {
             configuration.frameSemantics = .sceneDepth
         }
-
+        
         return configuration
     }
     
@@ -200,27 +200,24 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         if let currentFrame = session.currentFrame {
             let frameImage = currentFrame.capturedImage.rotateRelatively(withOrientation: orientationLast)
             framesCount += 1
-
+            
             // Process obtained data
             // Prepare RGB image to save
             let ciImage = CIImage(cvPixelBuffer: frameImage)
-
+            
             let uiImage = UIImage(ciImage: ciImage)
             
             // Save image
             try! saveImage(uiImage, folder: getTempFolder(), frameCount: framesCount, extensionPathComponents: nil)
-
+            
             //Measure relative angle from three axis
             if let data = self.motionManager?.deviceMotion {
                 let measuredAngles = measureAngles(fromDataAcceleration:data.gravity)
                 jsonDict["RelativeAngles"] = measuredAngles.toArray()
-                //MARK: Remove the line below after testing on Lidar iPhone
-//                jsonDict["LIDARData"] = fakeDepthArray()
             }
-
-            let depthData = currentFrame.sceneDepth?.depthMap
+            
             // Prepare normalized grayscale image with DepthMap
-            if let depth = depthData?.rotateRelatively(withOrientation: orientationLast) {
+            if let depth = currentFrame.sceneDepth?.depthMap {
                 let depthWidth = CVPixelBufferGetWidth(depth)
                 let depthHeight = CVPixelBufferGetHeight(depth)
                 CVPixelBufferLockBaseAddress(depth, CVPixelBufferLockFlags(rawValue: 0))
@@ -237,14 +234,11 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
                     depthArray.append(distancesLine)
                 }
                 
-                let depthSize = CGSize(width: depthWidth, height: depthHeight)
+                let saveDepthArray = rotate(matrix: depthArray, withOrientation: orientationLast)
                 
                 // Create CI image normalized grayscale
-                let ciImage = CIImage(cvPixelBuffer: depth)
-                let context = CIContext.init(options: nil)
-                guard let cgImageRef = context.createCGImage(ciImage, from:
-                                                                CGRect(x: 0, y: 0, width: depthSize.width, height: depthSize.height)) else { return }
-                let uiImage = UIImage(cgImage: cgImageRef)
+                let ciImage = CIImage(cvPixelBuffer: depth.rotateRelatively(withOrientation: orientationLast))
+                let uiImage = UIImage(ciImage: ciImage)
                 
                 // Save image (the same for depth)
                 try! saveImage(uiImage, folder: getTempFolder(), frameCount: framesCount, extensionPathComponents: "ImageDepth")
@@ -252,11 +246,11 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
                 
                 // Save depth map as txt with float numbers
                 let depthTxtPath = try! getTempFolder().appendingPathComponent("\(framesCount)_depth.txt")
-                let depthString:String = getStringFrom2DimArray(array: depthArray, height: depthHeight, width: depthWidth)
+                let depthString:String = getStringFrom2DimArray(array: saveDepthArray, height: depthHeight, width: depthWidth)
                 try! depthString.write(to: depthTxtPath, atomically: false, encoding: .utf8)
-
+                
                 //Add LIDAR data to Json
-                jsonDict["LIDARData"] = depthArray
+                jsonDict["LIDARData"] = saveDepthArray
                 
                 // Auxiliary function to make String from depth map array
                 func getStringFrom2DimArray(array: [[Float32]], height: Int, width: Int) -> String {
@@ -282,7 +276,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         if let json = try? JSONSerialization.data(withJSONObject: jsonDict, options: [.prettyPrinted]) {
             let jsonPath = try! getTempFolder().appendingPathComponent("\(framesCount).json")
             try! json.write(to: jsonPath)
-
+            
             if let jsonString = String(data: json, encoding: .utf8) {
                 print(jsonString)
             }
@@ -301,13 +295,13 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
             print("Something went wrong")
         }
     }
-
+    
     func getAllFilePathsToExport() -> [URL] {
         var filePaths: [URL] = []
         do {
             let path = try getTempFolder()
             print(path)
-
+            
             if let enumerator = FileManager.default.enumerator(at: path, includingPropertiesForKeys: nil) {
                 for case let fileURL as URL in enumerator {
                     let fileAttributes = try fileURL.resourceValues(forKeys:[.isRegularFileKey])
@@ -322,7 +316,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         }
         return filePaths
     }
-
+    
     func getTempFolder() throws -> URL {
         let path = try FileManager.default.url(for: .documentDirectory,
                                                in: .userDomainMask,
@@ -361,13 +355,18 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         }
         try image.jpegData(compressionQuality: 1.0)?.write(to: imagePath)
     }
-
-    func fakeDepthArray() ->  [[Float32]] {
-        return [[randomFloat(),randomFloat(),randomFloat(),randomFloat()],
-                [randomFloat(),randomFloat(),randomFloat(),randomFloat()],
-                [randomFloat(),randomFloat(),randomFloat(),randomFloat()],
-                [randomFloat(),randomFloat(),randomFloat(),randomFloat()],
-                [randomFloat(),randomFloat(),randomFloat(),randomFloat()]]
+    
+    func rotate(matrix: [[Float32]],
+                withOrientation orientation: UIInterfaceOrientation) -> Array<Array<Float32>> {
+        
+        switch orientation {
+        case .portrait:
+            return matrix.reversed().transposed()
+        case .landscapeRight:
+            return matrix.reversed()
+        default:
+            return matrix
+        }
     }
 
     func randomFloat() -> Float32 {
