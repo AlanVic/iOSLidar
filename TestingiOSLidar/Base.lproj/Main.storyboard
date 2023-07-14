@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,51 +33,31 @@
                                     <constraint firstAttribute="width" secondItem="cmB-M8-dG2" secondAttribute="height" multiplier="3:4" id="CWX-fk-QBi"/>
                                 </constraints>
                             </arView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="z:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dh6-qD-7Yg">
-                                <rect key="frame" x="16" y="694" width="14" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWx-ti-qib">
-                                <rect key="frame" x="16" y="808" width="138" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYl-fG-GM7">
+                                <rect key="frame" x="334" y="782" width="64" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="108" id="jdB-Ew-x6p"/>
+                                    <constraint firstAttribute="width" constant="64" id="FcN-Ca-xCD"/>
+                                    <constraint firstAttribute="height" constant="64" id="qgL-cf-Myv"/>
                                 </constraints>
-                                <buttonConfiguration key="configuration" style="filled" title="Salvar Frame" cornerStyle="large">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="didTapSaveFrame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zwy-Ce-CvQ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Frames salvos: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-62-Haj">
-                                <rect key="frame" x="143" y="768" width="128" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="7S3-xK-Brn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYl-fG-GM7">
-                                <rect key="frame" x="252" y="808" width="146" height="38"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Exportar pack">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle3"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="exportPack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bFu-AI-euh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bl9-Gd-FZ4">
-                                <rect key="frame" x="16" y="665" width="14" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtb-55-KTg">
-                                <rect key="frame" x="16" y="636" width="14" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QO-dH-rKj" customClass="CameraButton" customModule="TestingiOSLidar" customModuleProvider="target">
+                                <rect key="frame" x="174" y="780" width="66" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="66" id="Evk-CK-1SA"/>
+                                    <constraint firstAttribute="height" constant="66" id="U9R-DO-0iL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="didTapSaveFrame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R2t-3O-7Gy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frames salvos: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-62-Haj">
+                                <rect key="frame" x="16" y="150.5" width="128" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -86,34 +66,27 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dh6-qD-7Yg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0yx-dq-73C"/>
-                            <constraint firstItem="dh6-qD-7Yg" firstAttribute="bottom" secondItem="cmB-M8-dG2" secondAttribute="bottom" constant="-16" id="54I-Aj-BYB"/>
-                            <constraint firstItem="dh6-qD-7Yg" firstAttribute="top" secondItem="Bl9-Gd-FZ4" secondAttribute="bottom" constant="8" id="5kg-xB-0Ln"/>
-                            <constraint firstItem="lWx-ti-qib" firstAttribute="top" secondItem="5mY-62-Haj" secondAttribute="bottom" constant="16" id="Btc-y8-oid"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CJg-nd-qFr"/>
-                            <constraint firstItem="EYl-fG-GM7" firstAttribute="top" secondItem="lWx-ti-qib" secondAttribute="top" id="DTC-2k-jkr"/>
-                            <constraint firstItem="Bl9-Gd-FZ4" firstAttribute="top" secondItem="Rtb-55-KTg" secondAttribute="bottom" constant="8" id="FZz-8C-jNr"/>
+                            <constraint firstItem="5mY-62-Haj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="E2h-2b-1O2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4QO-dH-rKj" secondAttribute="bottom" constant="16" id="HXs-Sd-EBO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EYl-fG-GM7" secondAttribute="trailing" constant="16" id="RfQ-nT-Bm9"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Scv-ui-EbX"/>
-                            <constraint firstItem="Bl9-Gd-FZ4" firstAttribute="leading" secondItem="dh6-qD-7Yg" secondAttribute="leading" id="cfe-Dn-jkP"/>
-                            <constraint firstItem="lWx-ti-qib" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dbK-ML-aIq"/>
-                            <constraint firstItem="Rtb-55-KTg" firstAttribute="leading" secondItem="Bl9-Gd-FZ4" secondAttribute="leading" id="u68-EU-PPX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EYl-fG-GM7" secondAttribute="bottom" constant="16" id="aoN-F8-0lv"/>
+                            <constraint firstItem="4QO-dH-rKj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fkY-ZQ-3DQ"/>
+                            <constraint firstItem="cmB-M8-dG2" firstAttribute="top" secondItem="5mY-62-Haj" secondAttribute="bottom" constant="8" id="v8E-ga-Y94"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vBn-9K-xyi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lWx-ti-qib" secondAttribute="bottom" constant="16" id="vhv-wr-J2p"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Salvar" image="plus.rectangle.on.folder" catalog="system" selectedImage="plus.rectangle.on.folder" id="8Ts-lF-ZbP"/>
                     <connections>
                         <outlet property="augmentedView" destination="cmB-M8-dG2" id="EGU-uF-mfO"/>
                         <outlet property="saveFramesLabel" destination="5mY-62-Haj" id="WDB-Bn-v5h"/>
-                        <outlet property="xDegreeMeasured" destination="Rtb-55-KTg" id="ECl-j1-pSw"/>
-                        <outlet property="yDegreeMeasured" destination="Bl9-Gd-FZ4" id="AOw-0Q-zJ9"/>
-                        <outlet property="zDegreeMeasured" destination="dh6-qD-7Yg" id="vov-Hr-3E3"/>
+                        <outlet property="shareButton" destination="EYl-fG-GM7" id="whg-f1-hsj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1699" y="311"/>
+            <point key="canvasLocation" x="1698.5507246376812" y="310.71428571428572"/>
         </scene>
         <!--Experiência-->
         <scene sceneID="MQD-Fw-fXB">
@@ -230,6 +203,11 @@
             <point key="canvasLocation" x="-44.927536231884062" y="310.71428571428572"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4QO-dH-rKj">
+            <size key="intrinsicContentSize" width="24" height="14"/>
+        </designable>
+    </designables>
     <resources>
         <image name="plus.rectangle.on.folder" catalog="system" width="128" height="95"/>
         <image name="sensor" catalog="system" width="128" height="87"/>

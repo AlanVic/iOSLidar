@@ -25,7 +25,34 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
 
     var session: ARSession!
 
-    var orientationLast = UIInterfaceOrientation.portrait
+    var orientationLast = UIInterfaceOrientation.portrait {
+        willSet {
+            rotateShareButton(lastOrientation: orientationLast, newOrientation: newValue)
+        }
+    }
+    
+    func rotateShareButton(lastOrientation: UIInterfaceOrientation, newOrientation: UIInterfaceOrientation ) {
+        var angleRotate:CGFloat = .zero
+        if(lastOrientation == .landscapeLeft && newOrientation == .portrait
+           || lastOrientation == .portrait && newOrientation == .landscapeRight
+           || lastOrientation == .landscapeRight && newOrientation == .portraitUpsideDown) {
+            angleRotate = -.pi/2
+        } else if(lastOrientation == .landscapeRight && newOrientation == .portrait
+                  || lastOrientation == .portrait && newOrientation == .landscapeLeft
+                  || lastOrientation == .landscapeLeft && newOrientation == .portraitUpsideDown) {
+            angleRotate = .pi/2
+        } else if(lastOrientation == .portraitUpsideDown && newOrientation == .portrait
+                  || lastOrientation == .portrait && newOrientation == .portraitUpsideDown
+                  || lastOrientation == .landscapeLeft && newOrientation == .landscapeRight
+                  || lastOrientation == .landscapeRight && newOrientation == .landscapeLeft) {
+            angleRotate = .pi
+        }
+    
+        
+        UIView.animate(withDuration: 0.2, animations: ( {
+            self.shareButton.transform = CGAffineTransformRotate(self.shareButton.transform, angleRotate)
+        }))
+    }
     
     var framesCount: Int = 0 {
         didSet {
@@ -33,10 +60,8 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         }
     }
     
-    @IBOutlet weak var xDegreeMeasured: UILabel!
-    @IBOutlet weak var yDegreeMeasured: UILabel!
-    @IBOutlet weak var zDegreeMeasured: UILabel!
     @IBOutlet weak var augmentedView: ARView!
+    @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var saveFramesLabel: UILabel!
 
     var motionManager: CMMotionManager?
@@ -47,8 +72,15 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 32, weight: .medium, scale: .large)
+        let largeBoldDoc = UIImage(systemName: "square.and.arrow.up.circle", withConfiguration: largeConfig)
+
+
+        shareButton.setImage(largeBoldDoc, for: .normal)
+        
         
         clearTempFolder()
+//        UIButton().imageView?.contentMode = UIView.ContentMode.scaleAspectFill
         
         augmentedView.session.delegate = self
         
@@ -63,18 +95,6 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         motionManager?.accelerometerUpdateInterval = 0.2
         motionManager?.gyroUpdateInterval = 0.2
         motionManager?.deviceMotionUpdateInterval = 0.2
-        motionManager?.startDeviceMotionUpdates(to: (OperationQueue.current)!, withHandler: {
-            [weak self] (deviceMotionData, error) in
-            if error == nil, let data = deviceMotionData {
-                if let measuredAngle = self?.measureAngles(fromDataAcceleration: data.gravity) {
-                    self?.xDegreeMeasured.text = "x: " + "\(measuredAngle.xDegree)º"
-                    self?.yDegreeMeasured.text = "y: " + "\(measuredAngle.yDegree)º"
-                    self?.zDegreeMeasured.text = "z: " + "\(measuredAngle.zDegree)º"
-                }
-            } else {
-                print("\(error!)")
-            }
-        })
         motionManager?.startAccelerometerUpdates(to: (OperationQueue.current)!, withHandler: {
             [weak self] (accelerometerData, error) -> Void in
             if error == nil {
