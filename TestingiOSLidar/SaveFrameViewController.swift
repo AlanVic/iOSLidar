@@ -283,9 +283,24 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         }
     }
     
+    func nameFile() -> String {
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        guard let year = components.year,
+              let month = components.month,
+              let day = components.day,
+              let hour = components.hour,
+              let minutes = components.minute,
+              let seconds = components.second else {
+            return "file"
+        }
+        return String(format: "%04d-%02d-%02d_%02d-%02d-%02d", year,month,day,hour,minutes,seconds)
+    }
+    
     @IBAction func exportPack(_ sender: Any) {
         do {
-            let zipFilePath = try Zip.quickZipFiles(getAllFilePathsToExport(), fileName: "file")
+            let zipFilePath = try Zip.quickZipFiles(getAllFilePathsToExport(), fileName: nameFile())
             print(zipFilePath)
             var fileToShare = [Any]()
             fileToShare.append(zipFilePath)
