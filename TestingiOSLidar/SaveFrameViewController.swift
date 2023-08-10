@@ -246,21 +246,21 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
                 
                 // Save depth map as txt with float numbers
                 let depthTxtPath = try! getTempFolder().appendingPathComponent("\(framesCount)_depth.txt")
-                let depthString:String = getStringFrom2DimArray(array: saveDepthArray, height: depthHeight, width: depthWidth)
+                let depthString:String = getStringFrom2DimArray(array: saveDepthArray)
                 try! depthString.write(to: depthTxtPath, atomically: false, encoding: .utf8)
                 
                 //Add LIDAR data to Json
                 jsonDict["LIDARData"] = saveDepthArray
                 
                 // Auxiliary function to make String from depth map array
-                func getStringFrom2DimArray(array: [[Float32]], height: Int, width: Int) -> String {
+                func getStringFrom2DimArray(array: [[Float32]]) -> String {
                     var arrayStr: String = ""
                     //possivelmente o erro está aqui
-                    for y in 0...height-1 {
+                    for y in 0...array.count-1 {
                         var lineStr = "";
-                        for x in 0...width-1 {
+                        for x in 0...array[y].count-1 {
                             lineStr += String(array[y][x])
-                            if x != width-1 {
+                            if x != array[y].count-1 {
                                 lineStr += ","
                             }
                         }
