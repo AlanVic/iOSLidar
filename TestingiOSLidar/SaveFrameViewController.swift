@@ -30,6 +30,19 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
             rotateShareButton(lastOrientation: orientationLast, newOrientation: newValue)
         }
     }
+
+    var outputVolumeObserve: NSKeyValueObservation?
+    let audioSession = AVAudioSession.sharedInstance()
+
+    func listenVolumeButton() {
+        do {
+            try audioSession.setActive(true)
+        } catch {}
+
+        outputVolumeObserve = audioSession.observe(\.outputVolume) { [weak self] (audioSession, changes) in
+            self?.didTapSaveFrame()
+        }
+    }
     
     func rotateShareButton(lastOrientation: UIInterfaceOrientation, newOrientation: UIInterfaceOrientation ) {
         var angleRotate:CGFloat = .zero
@@ -88,6 +101,8 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         session.delegate = self
         
         initializeMotionManager()
+
+        listenVolumeButton()
     }
     
     private func initializeMotionManager() {
@@ -195,7 +210,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         saveFramesLabel.text = "Frames salvos: \(framesCount)"
     }
     
-    @IBAction func didTapSaveFrame(_ sender: Any) {
+    @IBAction func didTapSaveFrame() {
         var jsonDict: Dictionary<String, Any> = Dictionary()
         if let currentFrame = session.currentFrame {
             let frameImage = currentFrame.capturedImage.rotateRelatively(withOrientation: orientationLast)
