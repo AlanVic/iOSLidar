@@ -118,6 +118,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
                 print("\(error!)")
             }
         })
+        motionManager?.startDeviceMotionUpdates()
     }
     
     private func outputAccelerationData(_ acceleration: CMAcceleration) {
