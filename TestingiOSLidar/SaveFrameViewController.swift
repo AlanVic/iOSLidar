@@ -32,17 +32,8 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
     }
 
     var outputVolumeObserve: NSKeyValueObservation?
-    let audioSession = AVAudioSession.sharedInstance()
+    var volumeButtonHandler: VolumeButtonHandler?
 
-    func listenVolumeButton() {
-        do {
-            try audioSession.setActive(true)
-        } catch {}
-
-        outputVolumeObserve = audioSession.observe(\.outputVolume) { [weak self] (audioSession, changes) in
-            self?.didTapSaveFrame()
-        }
-    }
     
     func rotateShareButton(lastOrientation: UIInterfaceOrientation, newOrientation: UIInterfaceOrientation ) {
         var angleRotate:CGFloat = .zero
@@ -102,7 +93,10 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         
         initializeMotionManager()
 
-        listenVolumeButton()
+        volumeButtonHandler = VolumeButtonHandler(containerView: self.view, buttonClosure: { [weak self] _ in
+            self?.didTapSaveFrame()
+        })
+        volumeButtonHandler?.start()
     }
     
     private func initializeMotionManager() {
