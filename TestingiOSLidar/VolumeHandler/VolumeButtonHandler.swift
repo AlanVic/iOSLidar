@@ -176,6 +176,7 @@ public final class VolumeButtonHandler: NSObject {
         appIsActive = ntfName == UIApplication.didBecomeActiveNotification
         if appIsActive && isStarted {
             setInitialVolume()
+            try? session?.setActive(true)
         }
     }
     

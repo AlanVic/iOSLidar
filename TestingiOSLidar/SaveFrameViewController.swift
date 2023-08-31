@@ -119,20 +119,15 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         var orientationNew: UIInterfaceOrientation
         if acceleration.x >= 0.75 {
             orientationNew = .landscapeRight
-            print("landscapeRight")
         }
         else if acceleration.x <= -0.75 {
             orientationNew = .landscapeLeft
-            print("landscapeLeft")
         }
         else if acceleration.y <= -0.75 {
             orientationNew = .portrait
-            print("portrait")
-            
         }
         else if acceleration.y >= 0.75 {
             orientationNew = .portraitUpsideDown
-            print("portraitUpsideDown")
         }
         else {
             // Consider same as last time
