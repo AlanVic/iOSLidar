@@ -64,6 +64,8 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         }
     }
     
+    @IBOutlet weak var buttonMask: UIButton!
+    @IBOutlet weak var maskDots: UIImageView!
     @IBOutlet weak var augmentedView: ARView!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var saveFramesLabel: UILabel!
@@ -97,6 +99,17 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
             self?.didTapSaveFrame()
         })
         volumeButtonHandler?.start()
+        buttonMask.addTarget(self, action: #selector(didTapMaskButton), for: .touchUpInside)
+        buttonMask.setImage(UIImage(named: "mask"), for: .normal)
+        buttonMask.setImage(UIImage(named: "maskHidden"), for: .selected)
+//        buttonMask.imageView?.contentMode = .scaleAspectFit
+        
+    }
+    
+    @objc
+    private func didTapMaskButton() {
+        buttonMask.isSelected.toggle()
+        maskDots.isHidden = buttonMask.isSelected
     }
     
     private func initializeMotionManager() {
