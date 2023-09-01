@@ -30,6 +30,10 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
             rotateShareButton(lastOrientation: orientationLast, newOrientation: newValue)
         }
     }
+
+    var outputVolumeObserve: NSKeyValueObservation?
+    var volumeButtonHandler: VolumeButtonHandler?
+
     
     func rotateShareButton(lastOrientation: UIInterfaceOrientation, newOrientation: UIInterfaceOrientation ) {
         var angleRotate:CGFloat = .zero
@@ -60,6 +64,8 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         }
     }
     
+    @IBOutlet weak var buttonMask: UIButton!
+    @IBOutlet weak var maskDots: UIImageView!
     @IBOutlet weak var augmentedView: ARView!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var saveFramesLabel: UILabel!
@@ -88,6 +94,22 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         session.delegate = self
         
         initializeMotionManager()
+
+        volumeButtonHandler = VolumeButtonHandler(containerView: self.view, buttonClosure: { [weak self] _ in
+            self?.didTapSaveFrame()
+        })
+        volumeButtonHandler?.start()
+        buttonMask.addTarget(self, action: #selector(didTapMaskButton), for: .touchUpInside)
+        buttonMask.setImage(UIImage(named: "mask"), for: .normal)
+        buttonMask.setImage(UIImage(named: "maskHidden"), for: .selected)
+//        buttonMask.imageView?.contentMode = .scaleAspectFit
+        
+    }
+    
+    @objc
+    private func didTapMaskButton() {
+        buttonMask.isSelected.toggle()
+        maskDots.isHidden = buttonMask.isSelected
     }
     
     private func initializeMotionManager() {
@@ -103,26 +125,22 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
                 print("\(error!)")
             }
         })
+        motionManager?.startDeviceMotionUpdates()
     }
     
     private func outputAccelerationData(_ acceleration: CMAcceleration) {
         var orientationNew: UIInterfaceOrientation
         if acceleration.x >= 0.75 {
             orientationNew = .landscapeRight
-            print("landscapeRight")
         }
         else if acceleration.x <= -0.75 {
             orientationNew = .landscapeLeft
-            print("landscapeLeft")
         }
         else if acceleration.y <= -0.75 {
             orientationNew = .portrait
-            print("portrait")
-            
         }
         else if acceleration.y >= 0.75 {
             orientationNew = .portraitUpsideDown
-            print("portraitUpsideDown")
         }
         else {
             // Consider same as last time
@@ -195,7 +213,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         saveFramesLabel.text = "Frames salvos: \(framesCount)"
     }
     
-    @IBAction func didTapSaveFrame(_ sender: Any) {
+    @IBAction func didTapSaveFrame() {
         var jsonDict: Dictionary<String, Any> = Dictionary()
         if let currentFrame = session.currentFrame {
             let frameImage = currentFrame.capturedImage.rotateRelatively(withOrientation: orientationLast)

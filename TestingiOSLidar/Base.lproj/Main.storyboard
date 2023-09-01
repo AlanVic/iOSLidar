@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="piA-EB-KLW">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -53,7 +53,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <action selector="didTapSaveFrame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R2t-3O-7Gy"/>
+                                    <action selector="didTapSaveFrame" destination="BYZ-38-t0r" eventType="touchUpInside" id="SFA-MA-050"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frames salvos: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mY-62-Haj">
@@ -62,16 +62,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y9-cR-mKK" customClass="O">
+                                <rect key="frame" x="366" y="139" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="epH-bj-8pq"/>
+                                    <constraint firstAttribute="height" constant="32" id="kIe-Xu-var"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="mask"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maskDots" translatesAutoresizingMaskIntoConstraints="NO" id="9bo-Cd-kPO">
+                                <rect key="frame" x="0.0" y="179" width="414" height="552"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CJg-nd-qFr"/>
+                            <constraint firstItem="cmB-M8-dG2" firstAttribute="top" secondItem="2Y9-cR-mKK" secondAttribute="bottom" constant="8" id="CTS-0O-bjv"/>
                             <constraint firstItem="5mY-62-Haj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="E2h-2b-1O2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4QO-dH-rKj" secondAttribute="bottom" constant="16" id="HXs-Sd-EBO"/>
+                            <constraint firstItem="cmB-M8-dG2" firstAttribute="bottom" secondItem="9bo-Cd-kPO" secondAttribute="bottom" id="Mfg-ED-buD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EYl-fG-GM7" secondAttribute="trailing" constant="16" id="RfQ-nT-Bm9"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Scv-ui-EbX"/>
+                            <constraint firstAttribute="trailing" secondItem="2Y9-cR-mKK" secondAttribute="trailing" constant="16" id="aVT-wN-cRV"/>
+                            <constraint firstItem="9bo-Cd-kPO" firstAttribute="top" secondItem="cmB-M8-dG2" secondAttribute="top" id="alc-7r-Eud"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EYl-fG-GM7" secondAttribute="bottom" constant="16" id="aoN-F8-0lv"/>
+                            <constraint firstItem="9bo-Cd-kPO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eIj-SF-8if"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9bo-Cd-kPO" secondAttribute="trailing" id="fUt-QF-ypU"/>
                             <constraint firstItem="4QO-dH-rKj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fkY-ZQ-3DQ"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="top" secondItem="5mY-62-Haj" secondAttribute="bottom" constant="8" id="v8E-ga-Y94"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vBn-9K-xyi"/>
@@ -80,6 +98,8 @@
                     <tabBarItem key="tabBarItem" title="Salvar" image="plus.rectangle.on.folder" catalog="system" selectedImage="plus.rectangle.on.folder" id="8Ts-lF-ZbP"/>
                     <connections>
                         <outlet property="augmentedView" destination="cmB-M8-dG2" id="EGU-uF-mfO"/>
+                        <outlet property="buttonMask" destination="2Y9-cR-mKK" id="yfU-T0-SsK"/>
+                        <outlet property="maskDots" destination="9bo-Cd-kPO" id="kNb-Xm-Ab9"/>
                         <outlet property="saveFramesLabel" destination="5mY-62-Haj" id="WDB-Bn-v5h"/>
                         <outlet property="shareButton" destination="EYl-fG-GM7" id="whg-f1-hsj"/>
                     </connections>
@@ -205,10 +225,12 @@
     </scenes>
     <designables>
         <designable name="4QO-dH-rKj">
-            <size key="intrinsicContentSize" width="24" height="14"/>
+            <size key="intrinsicContentSize" width="75" height="34.5"/>
         </designable>
     </designables>
     <resources>
+        <image name="mask" width="32" height="32"/>
+        <image name="maskDots" width="1080" height="1440"/>
         <image name="plus.rectangle.on.folder" catalog="system" width="128" height="95"/>
         <image name="sensor" catalog="system" width="128" height="87"/>
         <systemColor name="systemBackgroundColor">
