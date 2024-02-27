@@ -659,14 +659,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = NM36QJ4P82;
+				DEVELOPMENT_TEAM = VJCR2LL3QM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "LIDAR Manga";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -675,7 +675,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alana.LIDARManga;
+				PRODUCT_BUNDLE_IDENTIFIER = alana.LIDARManga1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -696,14 +696,14 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = NM36QJ4P82;
+				DEVELOPMENT_TEAM = VJCR2LL3QM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "LIDAR Manga";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -712,7 +712,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alana.LIDARManga;
+				PRODUCT_BUNDLE_IDENTIFIER = alana.LIDARManga1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
