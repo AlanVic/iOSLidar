@@ -7,6 +7,7 @@ final class OnboardingViewController: UIViewController {
         
         // Criando uma instância da view SwiftUI
         let swiftUIView = OnboardingView {
+            UserDefaults.standard.setValue(true, forKey: "onboarding")
             let storyboard = UIStoryboard(name: "Main", bundle: .init(for: AppDelegate.self))
             let viewController = storyboard.instantiateViewController(withIdentifier: "Features")
             let navigationController = UINavigationController(rootViewController: viewController)
