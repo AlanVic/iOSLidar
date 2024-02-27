@@ -17,6 +17,10 @@ struct FeaturesView: View {
 
     var body: some View {
         VStack {
+            Text("O que você deseja fazer?")
+                .font(.title2)
+                .padding([.bottom], 24)
+            
             styleButton(iconImage: "plus.rectangle.on.folder", label: "Capturar frames") {
                 tapAction?(.saveFrames)
             }
@@ -32,15 +36,14 @@ struct FeaturesView: View {
                 Image(systemName: iconImage)
                 Text(label)
                     .accentColor(.white)
-                    .font(.title2)
+                    .font(.title3)
             }
             .padding([.bottom, .top], 4)
-            
-//            .clipShape(RoundedRectangle(cornerRadius: 8.0, style: .continuous))
             .frame(maxWidth: .infinity)
         }
         .frame(width: UIScreen.main.bounds.width - 64)
         .buttonStyle(.borderedProminent)
+        .padding([.bottom], 12)
     }
 }
 
