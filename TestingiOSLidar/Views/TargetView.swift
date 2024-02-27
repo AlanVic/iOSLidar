@@ -14,7 +14,7 @@ class TargetView: UIView {
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
-    } ()
+    }()
 
     private let borderView: UIView = {
         let view = UIView(frame: .zero)

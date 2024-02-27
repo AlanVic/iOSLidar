@@ -662,7 +662,8 @@
 				DEVELOPMENT_TEAM = VJCR2LL3QM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "LIDAR Manga";
+				INFOPLIST_KEY_CFBundleDisplayName = LIDAR;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
@@ -675,7 +676,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alana.LIDARManga1;
+				PRODUCT_BUNDLE_IDENTIFIER = hairon.lidar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -699,7 +700,8 @@
 				DEVELOPMENT_TEAM = VJCR2LL3QM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "LIDAR Manga";
+				INFOPLIST_KEY_CFBundleDisplayName = LIDAR;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
@@ -712,7 +714,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alana.LIDARManga1;
+				PRODUCT_BUNDLE_IDENTIFIER = hairon.lidar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
