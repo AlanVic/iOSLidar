@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  TestingiOSLidar
-//
-//  Created by Alan Paulino on 16/09/22.
-//
-
-//import UIKit
 import ARKit
 import RealityKit
 import Zip
@@ -78,15 +70,15 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: self, action: #selector(didTapLeftButton))
+        
         let largeConfig = UIImage.SymbolConfiguration(pointSize: 32, weight: .medium, scale: .large)
         let largeBoldDoc = UIImage(systemName: "square.and.arrow.up.circle", withConfiguration: largeConfig)
-        
         
         shareButton.setImage(largeBoldDoc, for: .normal)
         
         
         clearTempFolder()
-        //        UIButton().imageView?.contentMode = UIView.ContentMode.scaleAspectFill
         
         augmentedView.session.delegate = self
         
@@ -102,14 +94,17 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         buttonMask.addTarget(self, action: #selector(didTapMaskButton), for: .touchUpInside)
         buttonMask.setImage(UIImage(named: "mask"), for: .normal)
         buttonMask.setImage(UIImage(named: "maskHidden"), for: .selected)
-//        buttonMask.imageView?.contentMode = .scaleAspectFit
-        
     }
     
     @objc
     private func didTapMaskButton() {
         buttonMask.isSelected.toggle()
         maskDots.isHidden = buttonMask.isSelected
+    }
+    
+    @objc
+    private func didTapLeftButton() {
+        navigationController?.popViewController(animated: true)
     }
     
     private func initializeMotionManager() {
@@ -184,12 +179,7 @@ class SaveFrameViewController: UIViewController, ARSessionDelegate {
         
         augmentedView.session = session
     }
-    
-    //    override func viewWillDisappear(_ animated: Bool) {
-    //        super.viewWillDisappear(animated)
-    //        timer?.invalidate()
-    //    }
-    
+        
     func removingView() {
         self.augmentedView?.session.pause()            // there's no session on macOS
         self.augmentedView?.session.delegate = nil     // there's no session on macOS

@@ -30,10 +30,12 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Voltar", style: .plain, target: self, action: #selector(didTapLeftButton))
+        
         sliderTarget.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
 
         augmentedView.addSubview(circleView)
-        
         augmentedView.session.delegate = self
         
         session = ARSession()
@@ -52,6 +54,10 @@ class ExperienceViewController: UIViewController, ARSessionDelegate {
         
         augmentedView.session = session
         
+    }
+    
+    @objc func didTapLeftButton() {
+        navigationController?.popViewController(animated: true)
     }
     
     func removingView() {

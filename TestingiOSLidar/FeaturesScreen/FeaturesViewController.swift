@@ -21,12 +21,12 @@ class FeaturesViewController: UIHostingController<FeaturesView> {
     private func featureFlowManagement(_ featureFlow: FeaturesFlow) {
         switch(featureFlow) {
         case .saveFrames:
-            if let sicoobAuthController = self.storyboard?.instantiateViewController(withIdentifier: "SaveFrameViewController") {
-                self.navigationController?.pushViewController(sicoobAuthController, animated: true)
+            if let saveFramesViewController = self.storyboard?.instantiateViewController(withIdentifier: "SaveFrameViewController") {
+                self.navigationController?.pushViewController(saveFramesViewController, animated: true)
             }
         case .experienceLidar:
-            if let managementCallController = self.storyboard?.instantiateViewController(withIdentifier: "ExperienceViewController") {
-                self.navigationController?.pushViewController(managementCallController, animated: true)
+            if let experienceViewController = self.storyboard?.instantiateViewController(withIdentifier: "ExperienceViewController") {
+                self.navigationController?.pushViewController(experienceViewController, animated: true)
             }
         }
     }
