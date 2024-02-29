@@ -11,8 +11,7 @@
 		1CEF91E2EE2BA9B899F6B5E8 /* libPods-TestingiOSLidar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C4FECCADA97E33E70E878C /* libPods-TestingiOSLidar.a */; };
 		C2131126B1B1A5C1B8B27FC7 /* libPods-TestingiOSLidar-TestingiOSLidarUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CAD9711732EDAA5A3BAAB4 /* libPods-TestingiOSLidar-TestingiOSLidarUITests.a */; };
 		CEC0F19A2B8E9B8300D1C5B0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0F1992B8E9B8300D1C5B0 /* OnboardingView.swift */; };
-		CEC0F19C2B8E9C0900D1C5B0 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0F19B2B8E9C0900D1C5B0 /* WelcomeView.swift */; };
-		CEC0F19E2B8E9C2700D1C5B0 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0F19D2B8E9C2700D1C5B0 /* InformationView.swift */; };
+		CEC0F19C2B8E9C0900D1C5B0 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0F19B2B8E9C0900D1C5B0 /* TemplateView.swift */; };
 		CEC0F1A02B8E9CF600D1C5B0 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0F19F2B8E9CF600D1C5B0 /* OnboardingViewController.swift */; };
 		DB7390B82A4B69C0009C8F0F /* CVPixelBuffer+relativeRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7390B72A4B69C0009C8F0F /* CVPixelBuffer+relativeRotate.swift */; };
 		DB7390BC2A4F7D95009C8F0F /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7390BB2A4F7D95009C8F0F /* TargetView.swift */; };
@@ -60,8 +59,7 @@
 		8CDF537B66D9142DDC9417B3 /* libPods-TestingiOSLidarTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestingiOSLidarTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99CAD9711732EDAA5A3BAAB4 /* libPods-TestingiOSLidar-TestingiOSLidarUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestingiOSLidar-TestingiOSLidarUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC0F1992B8E9B8300D1C5B0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		CEC0F19B2B8E9C0900D1C5B0 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
-		CEC0F19D2B8E9C2700D1C5B0 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		CEC0F19B2B8E9C0900D1C5B0 /* TemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		CEC0F19F2B8E9CF600D1C5B0 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D0AB167D5C49598E73ACDD12 /* Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig"; path = "Target Support Files/Pods-TestingiOSLidar-TestingiOSLidarUITests/Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DB7390B72A4B69C0009C8F0F /* CVPixelBuffer+relativeRotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVPixelBuffer+relativeRotate.swift"; sourceTree = "<group>"; };
@@ -169,8 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				CEC0F1992B8E9B8300D1C5B0 /* OnboardingView.swift */,
-				CEC0F19B2B8E9C0900D1C5B0 /* WelcomeView.swift */,
-				CEC0F19D2B8E9C2700D1C5B0 /* InformationView.swift */,
+				CEC0F19B2B8E9C0900D1C5B0 /* TemplateView.swift */,
 				CEC0F19F2B8E9CF600D1C5B0 /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
@@ -465,7 +462,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEC0F19E2B8E9C2700D1C5B0 /* InformationView.swift in Sources */,
 				DB7390B82A4B69C0009C8F0F /* CVPixelBuffer+relativeRotate.swift in Sources */,
 				DBEB14152A54A13500D5DCE3 /* CameraButton.swift in Sources */,
 				DBE5B24C2AA13A5200188756 /* VolumeButtonHandler.swift in Sources */,
@@ -480,7 +476,7 @@
 				DBC5EF2F2A3A58A800DDC1E5 /* FeaturesView.swift in Sources */,
 				CEC0F19A2B8E9B8300D1C5B0 /* OnboardingView.swift in Sources */,
 				DBCCDA3728D4F05300C1C80E /* SceneDelegate.swift in Sources */,
-				CEC0F19C2B8E9C0900D1C5B0 /* WelcomeView.swift in Sources */,
+				CEC0F19C2B8E9C0900D1C5B0 /* TemplateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,7 +662,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
@@ -705,7 +701,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
