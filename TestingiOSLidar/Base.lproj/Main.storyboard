@@ -75,7 +75,7 @@
                                 <rect key="frame" x="0.0" y="179" width="414" height="552"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capture Frames" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ty-gL-2c0">
-                                <rect key="frame" x="24" y="84" width="366" height="24"/>
+                                <rect key="frame" x="24" y="72" width="366" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -101,7 +101,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Ty-gL-2c0" secondAttribute="trailing" constant="24" id="gXV-Bg-YsU"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="top" secondItem="5mY-62-Haj" secondAttribute="bottom" constant="8" id="v8E-ga-Y94"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vBn-9K-xyi"/>
-                            <constraint firstItem="4Ty-gL-2c0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="xz9-sT-Ezg"/>
+                            <constraint firstItem="4Ty-gL-2c0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="xz9-sT-Ezg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Salvar" image="plus.rectangle.on.folder" catalog="system" selectedImage="plus.rectangle.on.folder" id="8Ts-lF-ZbP"/>
@@ -216,7 +216,7 @@
     </scenes>
     <designables>
         <designable name="4QO-dH-rKj">
-            <size key="intrinsicContentSize" width="24" height="14"/>
+            <size key="intrinsicContentSize" width="75" height="34.5"/>
         </designable>
     </designables>
     <resources>
