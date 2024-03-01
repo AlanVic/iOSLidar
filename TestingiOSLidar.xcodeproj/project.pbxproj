@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09A5C77A6948FB41F516F3A1 /* libPods-TestingiOSLidarTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDF537B66D9142DDC9417B3 /* libPods-TestingiOSLidarTests.a */; };
 		1CEF91E2EE2BA9B899F6B5E8 /* libPods-TestingiOSLidar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46C4FECCADA97E33E70E878C /* libPods-TestingiOSLidar.a */; };
-		C2131126B1B1A5C1B8B27FC7 /* libPods-TestingiOSLidar-TestingiOSLidarUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99CAD9711732EDAA5A3BAAB4 /* libPods-TestingiOSLidar-TestingiOSLidarUITests.a */; };
 		CEC0F19A2B8E9B8300D1C5B0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0F1992B8E9B8300D1C5B0 /* OnboardingView.swift */; };
 		CEC0F19C2B8E9C0900D1C5B0 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0F19B2B8E9C0900D1C5B0 /* TemplateView.swift */; };
 		CEC0F1A02B8E9CF600D1C5B0 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC0F19F2B8E9CF600D1C5B0 /* OnboardingViewController.swift */; };
@@ -24,31 +22,11 @@
 		DBCCDA3C28D4F05300C1C80E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCCDA3A28D4F05300C1C80E /* Main.storyboard */; };
 		DBCCDA3E28D4F05500C1C80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBCCDA3D28D4F05500C1C80E /* Assets.xcassets */; };
 		DBCCDA4128D4F05500C1C80E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCCDA3F28D4F05500C1C80E /* LaunchScreen.storyboard */; };
-		DBCCDA4C28D4F05500C1C80E /* TestingiOSLidarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCDA4B28D4F05500C1C80E /* TestingiOSLidarTests.swift */; };
-		DBCCDA5628D4F05500C1C80E /* TestingiOSLidarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCDA5528D4F05500C1C80E /* TestingiOSLidarUITests.swift */; };
-		DBCCDA5828D4F05500C1C80E /* TestingiOSLidarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCDA5728D4F05500C1C80E /* TestingiOSLidarUITestsLaunchTests.swift */; };
 		DBCD439D2A6198D900A382CF /* Collection+transposed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCD439C2A6198D900A382CF /* Collection+transposed.swift */; };
 		DBE5B24A2AA13A4B00188756 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE5B2492AA13A4B00188756 /* Log.swift */; };
 		DBE5B24C2AA13A5200188756 /* VolumeButtonHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE5B24B2AA13A5200188756 /* VolumeButtonHandler.swift */; };
 		DBEB14152A54A13500D5DCE3 /* CameraButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEB14142A54A13500D5DCE3 /* CameraButton.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DBCCDA4828D4F05500C1C80E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DBCCDA2928D4F05300C1C80E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DBCCDA3028D4F05300C1C80E;
-			remoteInfo = TestingiOSLidar;
-		};
-		DBCCDA5228D4F05500C1C80E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DBCCDA2928D4F05300C1C80E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DBCCDA3028D4F05300C1C80E;
-			remoteInfo = TestingiOSLidar;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		46C4FECCADA97E33E70E878C /* libPods-TestingiOSLidar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestingiOSLidar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,11 +53,6 @@
 		DBCCDA3D28D4F05500C1C80E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBCCDA4028D4F05500C1C80E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBCCDA4228D4F05500C1C80E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DBCCDA4728D4F05500C1C80E /* TestingiOSLidarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingiOSLidarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBCCDA4B28D4F05500C1C80E /* TestingiOSLidarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingiOSLidarTests.swift; sourceTree = "<group>"; };
-		DBCCDA5128D4F05500C1C80E /* TestingiOSLidarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestingiOSLidarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DBCCDA5528D4F05500C1C80E /* TestingiOSLidarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingiOSLidarUITests.swift; sourceTree = "<group>"; };
-		DBCCDA5728D4F05500C1C80E /* TestingiOSLidarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingiOSLidarUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DBCD439C2A6198D900A382CF /* Collection+transposed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+transposed.swift"; sourceTree = "<group>"; };
 		DBE5B2492AA13A4B00188756 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		DBE5B24B2AA13A5200188756 /* VolumeButtonHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeButtonHandler.swift; sourceTree = "<group>"; };
@@ -93,22 +66,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CEF91E2EE2BA9B899F6B5E8 /* libPods-TestingiOSLidar.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBCCDA4428D4F05500C1C80E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				09A5C77A6948FB41F516F3A1 /* libPods-TestingiOSLidarTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBCCDA4E28D4F05500C1C80E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C2131126B1B1A5C1B8B27FC7 /* libPods-TestingiOSLidar-TestingiOSLidarUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,8 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				DBCCDA3328D4F05300C1C80E /* TestingiOSLidar */,
-				DBCCDA4A28D4F05500C1C80E /* TestingiOSLidarTests */,
-				DBCCDA5428D4F05500C1C80E /* TestingiOSLidarUITests */,
 				DBCCDA3228D4F05300C1C80E /* Products */,
 				6218BFC7176FB1268A91802A /* Pods */,
 				0056F42A7B968429E325950D /* Frameworks */,
@@ -198,8 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				DBCCDA3128D4F05300C1C80E /* TestingiOSLidar.app */,
-				DBCCDA4728D4F05500C1C80E /* TestingiOSLidarTests.xctest */,
-				DBCCDA5128D4F05500C1C80E /* TestingiOSLidarUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,23 +175,6 @@
 				DBCCDA4228D4F05500C1C80E /* Info.plist */,
 			);
 			path = TestingiOSLidar;
-			sourceTree = "<group>";
-		};
-		DBCCDA4A28D4F05500C1C80E /* TestingiOSLidarTests */ = {
-			isa = PBXGroup;
-			children = (
-				DBCCDA4B28D4F05500C1C80E /* TestingiOSLidarTests.swift */,
-			);
-			path = TestingiOSLidarTests;
-			sourceTree = "<group>";
-		};
-		DBCCDA5428D4F05500C1C80E /* TestingiOSLidarUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DBCCDA5528D4F05500C1C80E /* TestingiOSLidarUITests.swift */,
-				DBCCDA5728D4F05500C1C80E /* TestingiOSLidarUITestsLaunchTests.swift */,
-			);
-			path = TestingiOSLidarUITests;
 			sourceTree = "<group>";
 		};
 		DBE5B2482AA13A3600188756 /* VolumeHandler */ = {
@@ -280,44 +216,6 @@
 			productReference = DBCCDA3128D4F05300C1C80E /* TestingiOSLidar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DBCCDA4628D4F05500C1C80E /* TestingiOSLidarTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DBCCDA5E28D4F05500C1C80E /* Build configuration list for PBXNativeTarget "TestingiOSLidarTests" */;
-			buildPhases = (
-				9E9DA9B7B32BA735F65D291A /* [CP] Check Pods Manifest.lock */,
-				DBCCDA4328D4F05500C1C80E /* Sources */,
-				DBCCDA4428D4F05500C1C80E /* Frameworks */,
-				DBCCDA4528D4F05500C1C80E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DBCCDA4928D4F05500C1C80E /* PBXTargetDependency */,
-			);
-			name = TestingiOSLidarTests;
-			productName = TestingiOSLidarTests;
-			productReference = DBCCDA4728D4F05500C1C80E /* TestingiOSLidarTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DBCCDA5028D4F05500C1C80E /* TestingiOSLidarUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DBCCDA6128D4F05500C1C80E /* Build configuration list for PBXNativeTarget "TestingiOSLidarUITests" */;
-			buildPhases = (
-				A72EE5018E3A8D0AE6C7FAB0 /* [CP] Check Pods Manifest.lock */,
-				DBCCDA4D28D4F05500C1C80E /* Sources */,
-				DBCCDA4E28D4F05500C1C80E /* Frameworks */,
-				DBCCDA4F28D4F05500C1C80E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DBCCDA5328D4F05500C1C80E /* PBXTargetDependency */,
-			);
-			name = TestingiOSLidarUITests;
-			productName = TestingiOSLidarUITests;
-			productReference = DBCCDA5128D4F05500C1C80E /* TestingiOSLidarUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -330,14 +228,6 @@
 				TargetAttributes = {
 					DBCCDA3028D4F05300C1C80E = {
 						CreatedOnToolsVersion = 13.4.1;
-					};
-					DBCCDA4628D4F05500C1C80E = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = DBCCDA3028D4F05300C1C80E;
-					};
-					DBCCDA5028D4F05500C1C80E = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = DBCCDA3028D4F05300C1C80E;
 					};
 				};
 			};
@@ -355,8 +245,6 @@
 			projectRoot = "";
 			targets = (
 				DBCCDA3028D4F05300C1C80E /* TestingiOSLidar */,
-				DBCCDA4628D4F05500C1C80E /* TestingiOSLidarTests */,
-				DBCCDA5028D4F05500C1C80E /* TestingiOSLidarUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -369,20 +257,6 @@
 				DBCCDA4128D4F05500C1C80E /* LaunchScreen.storyboard in Resources */,
 				DBCCDA3E28D4F05500C1C80E /* Assets.xcassets in Resources */,
 				DBCCDA3C28D4F05300C1C80E /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBCCDA4528D4F05500C1C80E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBCCDA4F28D4F05500C1C80E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,50 +279,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-TestingiOSLidar-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9E9DA9B7B32BA735F65D291A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TestingiOSLidarTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A72EE5018E3A8D0AE6C7FAB0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TestingiOSLidar-TestingiOSLidarUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -480,37 +310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DBCCDA4328D4F05500C1C80E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DBCCDA4C28D4F05500C1C80E /* TestingiOSLidarTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DBCCDA4D28D4F05500C1C80E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DBCCDA5828D4F05500C1C80E /* TestingiOSLidarUITestsLaunchTests.swift in Sources */,
-				DBCCDA5628D4F05500C1C80E /* TestingiOSLidarUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DBCCDA4928D4F05500C1C80E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DBCCDA3028D4F05300C1C80E /* TestingiOSLidar */;
-			targetProxy = DBCCDA4828D4F05500C1C80E /* PBXContainerItemProxy */;
-		};
-		DBCCDA5328D4F05500C1C80E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DBCCDA3028D4F05300C1C80E /* TestingiOSLidar */;
-			targetProxy = DBCCDA5228D4F05500C1C80E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DBCCDA3A28D4F05300C1C80E /* Main.storyboard */ = {
@@ -654,11 +454,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = VJCR2LL3QM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = LIDAR;
+				INFOPLIST_KEY_CFBundleDisplayName = "LiDAR App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -693,11 +493,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = VJCR2LL3QM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = LIDAR;
+				INFOPLIST_KEY_CFBundleDisplayName = "LiDAR App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -724,86 +524,6 @@
 			};
 			name = Release;
 		};
-		DBCCDA5F28D4F05500C1C80E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6711B9D208AB035525C40C09 /* Pods-TestingiOSLidarTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NM36QJ4P82;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alanvictor.TestingiOSLidarTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestingiOSLidar.app/TestingiOSLidar";
-			};
-			name = Debug;
-		};
-		DBCCDA6028D4F05500C1C80E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82CA94E254134F0459C4FBAD /* Pods-TestingiOSLidarTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NM36QJ4P82;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alanvictor.TestingiOSLidarTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestingiOSLidar.app/TestingiOSLidar";
-			};
-			name = Release;
-		};
-		DBCCDA6228D4F05500C1C80E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5AAF76AA6A16F972EA055BBA /* Pods-TestingiOSLidar-TestingiOSLidarUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NM36QJ4P82;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alanvictor.TestingiOSLidarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TestingiOSLidar;
-			};
-			name = Debug;
-		};
-		DBCCDA6328D4F05500C1C80E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0AB167D5C49598E73ACDD12 /* Pods-TestingiOSLidar-TestingiOSLidarUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = NM36QJ4P82;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = alanvictor.TestingiOSLidarUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TestingiOSLidar;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -821,24 +541,6 @@
 			buildConfigurations = (
 				DBCCDA5C28D4F05500C1C80E /* Debug */,
 				DBCCDA5D28D4F05500C1C80E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DBCCDA5E28D4F05500C1C80E /* Build configuration list for PBXNativeTarget "TestingiOSLidarTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DBCCDA5F28D4F05500C1C80E /* Debug */,
-				DBCCDA6028D4F05500C1C80E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DBCCDA6128D4F05500C1C80E /* Build configuration list for PBXNativeTarget "TestingiOSLidarUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DBCCDA6228D4F05500C1C80E /* Debug */,
-				DBCCDA6328D4F05500C1C80E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
