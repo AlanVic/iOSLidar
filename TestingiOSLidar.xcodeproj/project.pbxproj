@@ -460,7 +460,7 @@
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "LiDAR App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Para que você consiga ter experiência com o sensor LiDAR e capturar frames para treinar seu próprio modelo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -501,7 +501,7 @@
 				INFOPLIST_FILE = TestingiOSLidar/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "LiDAR App";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use AR experience";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Para que você consiga ter experiência com o sensor LiDAR e capturar frames para treinar seu próprio modelo.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
