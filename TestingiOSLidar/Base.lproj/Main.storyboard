@@ -74,12 +74,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maskDots" translatesAutoresizingMaskIntoConstraints="NO" id="9bo-Cd-kPO">
                                 <rect key="frame" x="0.0" y="179" width="414" height="552"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capture Frames" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ty-gL-2c0">
-                                <rect key="frame" x="24" y="72" width="366" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -95,13 +89,10 @@
                             <constraint firstItem="9bo-Cd-kPO" firstAttribute="top" secondItem="cmB-M8-dG2" secondAttribute="top" id="alc-7r-Eud"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EYl-fG-GM7" secondAttribute="bottom" constant="16" id="aoN-F8-0lv"/>
                             <constraint firstItem="9bo-Cd-kPO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eIj-SF-8if"/>
-                            <constraint firstItem="4Ty-gL-2c0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="ekf-5h-gMd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9bo-Cd-kPO" secondAttribute="trailing" id="fUt-QF-ypU"/>
                             <constraint firstItem="4QO-dH-rKj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fkY-ZQ-3DQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Ty-gL-2c0" secondAttribute="trailing" constant="24" id="gXV-Bg-YsU"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="top" secondItem="5mY-62-Haj" secondAttribute="bottom" constant="8" id="v8E-ga-Y94"/>
                             <constraint firstItem="cmB-M8-dG2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="vBn-9K-xyi"/>
-                            <constraint firstItem="4Ty-gL-2c0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="xz9-sT-Ezg"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Salvar" image="plus.rectangle.on.folder" catalog="system" selectedImage="plus.rectangle.on.folder" id="8Ts-lF-ZbP"/>
